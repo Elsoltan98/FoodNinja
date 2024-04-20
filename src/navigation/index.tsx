@@ -7,7 +7,13 @@ const AppNav = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Intro" component={Intro} />
+        <Stack.Screen
+          name="Intro"
+          component={Intro}
+          options={{
+            headerShown: false,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

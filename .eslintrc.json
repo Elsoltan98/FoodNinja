@@ -21,6 +21,10 @@
         "react",
         "react-native"
     ],
+    "settings": {
+        "import/ignore": ["react-native"],
+
+    },
     "rules":{
         // allow .js files to contain JSX code
         "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx", ".js", ".jsx"] }],

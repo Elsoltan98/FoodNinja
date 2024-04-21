@@ -7,9 +7,12 @@ import Colors from '../../config/colors';
 import AppText from '../../components/AppText';
 import CustomBtn from '../../components/CustomBtn';
 import { Intro2 } from '../../assets/intro2';
+import { useNavigation } from '@react-navigation/native';
+import NavTypes from './../../config/NavTypes';
 
 const Intro = () => {
   const [nextIntro, setNextIntro] = useState<Number>(0);
+  const navigation: any = useNavigation();
   return (
     <View style={styles.container}>
       {nextIntro === 0 ? (
@@ -50,7 +53,10 @@ const Intro = () => {
               size={fontScale(12)}
             />
           </View>
-          <CustomBtn title="Finish" />
+          <CustomBtn
+            title="Finish"
+            onPress={() => navigation.navigate(NavTypes.AUTH_NAV)}
+          />
         </>
       )}
     </View>

@@ -30,9 +30,11 @@ const CustomBtn: FC<CustomBtnProps> = ({
   textColor,
 }) => {
   return (
-    <TouchableOpacity style={[styles.linearGradient, style]} onPress={onPress}>
+    <TouchableOpacity
+      style={[icon ? styles.linearGradient : null, style]}
+      onPress={onPress}>
       <LinearGradient
-        style={icon ? styles.iconContainer : null}
+        style={[icon ? styles.iconContainer : styles.linearGradient]}
         colors={
           colors
             ? colors

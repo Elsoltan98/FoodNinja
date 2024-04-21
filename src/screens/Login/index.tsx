@@ -9,6 +9,8 @@ import CustomInput from '../../components/CustomInput';
 import CustomIcon from '../../components/Icon';
 import { Formik } from 'formik';
 import CustomBtn from '../../components/CustomBtn';
+import { facebookLogo } from '../../assets/facebookLogo';
+import { googleLogo } from '../../assets/googleLogo';
 
 const Login = () => {
   const [show, setShow] = useState<boolean>(false);
@@ -77,14 +79,35 @@ const Login = () => {
           }}>
           <AppText text="Or Continue With" fontWeight="bold" />
           <View style={styles.socialContainer}>
-            <CustomBtn title="Facebook" />
-            <CustomBtn title="Google" />
+            <CustomBtn
+              title="Facebook"
+              icon={<SvgXml xml={facebookLogo} />}
+              style={[styles.socialBtns, { marginRight: scale(20) }]}
+              colors={[Colors.light.white, Colors.light.white]}
+              textColor={Colors.light.textPrimary}
+            />
+            <CustomBtn
+              title="Google"
+              icon={<SvgXml xml={googleLogo} />}
+              style={styles.socialBtns}
+              colors={[Colors.light.white, Colors.light.white]}
+              textColor={Colors.light.textPrimary}
+            />
           </View>
-          <AppText text="Forgot Your Password?" fontWeight="bold" />
+          <AppText
+            text="Forgot Your Password?"
+            fontWeight="bold"
+            style={styles.signupText}
+            color={Colors.light.gridSecondary}
+          />
         </View>
-        <View>
+        <View style={styles.footerContainer}>
           <CustomBtn title="Login" />
-          <AppText text="Don’t have an account? Sign up" />
+          <AppText
+            text="Don’t have an account? Sign up"
+            style={styles.signupText}
+            color={Colors.light.gridSecondary}
+          />
         </View>
       </ImageBackground>
     </View>
@@ -108,6 +131,27 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     marginVertical: vScale(20),
+  },
+  socialBtns: {
+    paddingHorizontal: scale(0),
+    width: sWidth * 0.42,
+    backgroundColor: Colors.light.white,
+    borderWidth: scale(1),
+    borderColor: Colors.light.lightGray,
+    elevation: 20,
+    shadowColor: Colors.light.shadow,
+    shadowOffset: { width: 2, height: 5 },
+    shadowOpacity: 0.3,
+    shadowRadius: 15,
+  },
+  footerContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: vScale(10),
+  },
+  signupText: {
+    marginTop: vScale(20),
+    textDecorationLine: 'underline',
   },
 });
 

@@ -22,6 +22,8 @@ interface CustomInputProps {
     | undefined;
   isPassword?: boolean;
   show?: boolean;
+  touched?: { [fieldName: string]: boolean };
+  errors?: { [fieldName: string]: string };
 }
 
 const CustomInput: FC<CustomInputProps> = ({
@@ -34,6 +36,8 @@ const CustomInput: FC<CustomInputProps> = ({
   onBlur,
   isPassword,
   show,
+  touched,
+  errors,
 }) => {
   return (
     <View>

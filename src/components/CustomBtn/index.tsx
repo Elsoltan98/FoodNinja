@@ -4,8 +4,9 @@ import {
   StyleSheet,
   TouchableOpacity,
   GestureResponderEvent,
+  ViewStyle,
 } from 'react-native';
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import Colors from '../../config/colors';
 import { fontScale, scale, vScale } from '../../config/scale';
@@ -14,20 +15,36 @@ import AppText from '../AppText';
 interface CustomBtnProps {
   title: string;
   onPress?: (event?: GestureResponderEvent) => void;
+  icon?: ReactNode;
+  style?: ViewStyle | ViewStyle[];
+  colors?: string[];
+  textColor?: string;
 }
 
-const CustomBtn: FC<CustomBtnProps> = ({ title, onPress }) => {
+const CustomBtn: FC<CustomBtnProps> = ({
+  title,
+  onPress,
+  icon,
+  style,
+  colors,
+  textColor,
+}) => {
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity style={[styles.linearGradient, style]} onPress={onPress}>
       <LinearGradient
-        colors={[Colors.light.gridPrimary, Colors.light.gridSecondary]}
+        style={icon ? styles.iconContainer : null}
+        colors={
+          colors
+            ? colors
+            : [Colors.light.gridPrimary, Colors.light.gridSecondary]
+        }
         start={{ x: 0, y: 1 }}
-        end={{ x: 1, y: 0 }}
-        style={styles.linearGradient}>
+        end={{ x: 1, y: 0 }}>
+        {icon && icon}
         <AppText
           text={title}
           size={fontScale(16)}
-          color={Colors.light.white}
+          color={textColor ? textColor : Colors.light.white}
           fontWeight="bold"
         />
       </LinearGradient>
@@ -47,6 +64,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#ffffff',
     backgroundColor: 'transparent',
+  },
+  iconContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
   },
 });
 

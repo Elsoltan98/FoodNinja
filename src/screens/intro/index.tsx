@@ -2,7 +2,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import React from 'react';
 import { SvgXml } from 'react-native-svg';
 import { Intro1 } from '../../assets/intro1';
-import { fontScale, sHeight, sWidth } from '../../config/scale';
+import { fontScale, sHeight, sWidth, vScale } from '../../config/scale';
 import Colors from '../../config/colors';
 import AppText from '../../components/AppText';
 
@@ -19,8 +19,9 @@ const Intro = () => {
       />
       <AppText
         text={`Here You Can find a chef or dish for every \n taste and color. Enjoy!`}
-        style={{ textAlign: 'center' }}
+        style={{ textAlign: 'center', marginTop: vScale(10) }}
         color={Colors.light.black}
+        size={fontScale(12)}
       />
     </View>
   );

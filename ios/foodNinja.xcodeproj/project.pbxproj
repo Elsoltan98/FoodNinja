@@ -12,12 +12,12 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		14A5EC5C008D4FE18B55C9AB /* BentonSansLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2493B51DAC1F42228D212AC3 /* BentonSansLight.otf */; };
-		20C2B61C56CB4AA39B95E795 /* BentonSansRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D2B35D2587C4C37BC71E14A /* BentonSansRegular.otf */; };
-		45533531BC3F4629945D4000 /* BentonSansBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 292E00BB2FA6463AB5DCBE2C /* BentonSansBold.otf */; };
-		604AAB29227A44F38487D73E /* BentonSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 79D425D20F1E4B96A2B1F4DC /* BentonSansMedium.otf */; };
 		7699B88040F8A987B510C191 /* libPods-foodNinja-foodNinjaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-foodNinja-foodNinjaTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		FA64A0E42BD56B790029F235 /* BentonSansBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 292E00BB2FA6463AB5DCBE2C /* BentonSansBold.otf */; };
+		FA64A0E52BD56B790029F235 /* BentonSansLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2493B51DAC1F42228D212AC3 /* BentonSansLight.otf */; };
+		FA64A0E62BD56B790029F235 /* BentonSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 79D425D20F1E4B96A2B1F4DC /* BentonSansMedium.otf */; };
+		FA64A0E72BD56B790029F235 /* BentonSansRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D2B35D2587C4C37BC71E14A /* BentonSansRegular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,17 +41,36 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = foodNinja/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = foodNinja/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-foodNinja-foodNinjaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-foodNinja-foodNinjaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2493B51DAC1F42228D212AC3 /* BentonSansLight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = BentonSansLight.otf; path = ../src/assets/fonts/BentonSansLight.otf; sourceTree = "<group>"; };
-		292E00BB2FA6463AB5DCBE2C /* BentonSansBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = BentonSansBold.otf; path = ../src/assets/fonts/BentonSansBold.otf; sourceTree = "<group>"; };
+		2493B51DAC1F42228D212AC3 /* BentonSansLight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = BentonSansLight.otf; path = ../src/assets/fonts/BentonSansLight.otf; sourceTree = "<group>"; };
+		292E00BB2FA6463AB5DCBE2C /* BentonSansBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = BentonSansBold.otf; path = ../src/assets/fonts/BentonSansBold.otf; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-foodNinja.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodNinja.debug.xcconfig"; path = "Target Support Files/Pods-foodNinja/Pods-foodNinja.debug.xcconfig"; sourceTree = "<group>"; };
-		4D2B35D2587C4C37BC71E14A /* BentonSansRegular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = BentonSansRegular.otf; path = ../src/assets/fonts/BentonSansRegular.otf; sourceTree = "<group>"; };
+		4D2B35D2587C4C37BC71E14A /* BentonSansRegular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = BentonSansRegular.otf; path = ../src/assets/fonts/BentonSansRegular.otf; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-foodNinja.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodNinja.release.xcconfig"; path = "Target Support Files/Pods-foodNinja/Pods-foodNinja.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-foodNinja-foodNinjaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodNinja-foodNinjaTests.debug.xcconfig"; path = "Target Support Files/Pods-foodNinja-foodNinjaTests/Pods-foodNinja-foodNinjaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-foodNinja.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-foodNinja.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		79D425D20F1E4B96A2B1F4DC /* BentonSansMedium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = BentonSansMedium.otf; path = ../src/assets/fonts/BentonSansMedium.otf; sourceTree = "<group>"; };
+		79D425D20F1E4B96A2B1F4DC /* BentonSansMedium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = BentonSansMedium.otf; path = ../src/assets/fonts/BentonSansMedium.otf; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = foodNinja/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-foodNinja-foodNinjaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodNinja-foodNinjaTests.release.xcconfig"; path = "Target Support Files/Pods-foodNinja-foodNinjaTests/Pods-foodNinja-foodNinjaTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		FA64A0BD2BD569290029F235 /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntDesign.ttf; sourceTree = "<group>"; };
+		FA64A0BE2BD569290029F235 /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
+		FA64A0BF2BD569290029F235 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
+		FA64A0C02BD569290029F235 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
+		FA64A0C12BD569290029F235 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		FA64A0C22BD569290029F235 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
+		FA64A0C32BD569290029F235 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
+		FA64A0C42BD569290029F235 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
+		FA64A0C52BD569290029F235 /* FontAwesome6_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Brands.ttf; sourceTree = "<group>"; };
+		FA64A0C62BD569290029F235 /* FontAwesome6_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Regular.ttf; sourceTree = "<group>"; };
+		FA64A0C72BD569290029F235 /* FontAwesome6_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Solid.ttf; sourceTree = "<group>"; };
+		FA64A0C82BD569290029F235 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
+		FA64A0C92BD569290029F235 /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foundation.ttf; sourceTree = "<group>"; };
+		FA64A0CA2BD569290029F235 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
+		FA64A0CB2BD569290029F235 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
+		FA64A0CC2BD569290029F235 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		FA64A0CD2BD569290029F235 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
+		FA64A0CE2BD569290029F235 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
+		FA64A0CF2BD569290029F235 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +113,7 @@
 		13B07FAE1A68108700A75B9A /* foodNinja */ = {
 			isa = PBXGroup;
 			children = (
+				FA64A0D02BD569290029F235 /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -113,7 +133,6 @@
 				4D2B35D2587C4C37BC71E14A /* BentonSansRegular.otf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -167,6 +186,33 @@
 				89C6BE57DB24E9ADA2F236DE /* Pods-foodNinja-foodNinjaTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA64A0D02BD569290029F235 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FA64A0BD2BD569290029F235 /* AntDesign.ttf */,
+				FA64A0BE2BD569290029F235 /* Entypo.ttf */,
+				FA64A0BF2BD569290029F235 /* EvilIcons.ttf */,
+				FA64A0C02BD569290029F235 /* Feather.ttf */,
+				FA64A0C12BD569290029F235 /* FontAwesome.ttf */,
+				FA64A0C22BD569290029F235 /* FontAwesome5_Brands.ttf */,
+				FA64A0C32BD569290029F235 /* FontAwesome5_Regular.ttf */,
+				FA64A0C42BD569290029F235 /* FontAwesome5_Solid.ttf */,
+				FA64A0C52BD569290029F235 /* FontAwesome6_Brands.ttf */,
+				FA64A0C62BD569290029F235 /* FontAwesome6_Regular.ttf */,
+				FA64A0C72BD569290029F235 /* FontAwesome6_Solid.ttf */,
+				FA64A0C82BD569290029F235 /* Fontisto.ttf */,
+				FA64A0C92BD569290029F235 /* Foundation.ttf */,
+				FA64A0CA2BD569290029F235 /* Ionicons.ttf */,
+				FA64A0CB2BD569290029F235 /* MaterialCommunityIcons.ttf */,
+				FA64A0CC2BD569290029F235 /* MaterialIcons.ttf */,
+				FA64A0CD2BD569290029F235 /* Octicons.ttf */,
+				FA64A0CE2BD569290029F235 /* SimpleLineIcons.ttf */,
+				FA64A0CF2BD569290029F235 /* Zocial.ttf */,
+			);
+			name = Fonts;
+			path = "../node_modules/react-native-vector-icons/Fonts";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,12 +308,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA64A0E42BD56B790029F235 /* BentonSansBold.otf in Resources */,
+				FA64A0E52BD56B790029F235 /* BentonSansLight.otf in Resources */,
+				FA64A0E62BD56B790029F235 /* BentonSansMedium.otf in Resources */,
+				FA64A0E72BD56B790029F235 /* BentonSansRegular.otf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				45533531BC3F4629945D4000 /* BentonSansBold.otf in Resources */,
-				14A5EC5C008D4FE18B55C9AB /* BentonSansLight.otf in Resources */,
-				604AAB29227A44F38487D73E /* BentonSansMedium.otf in Resources */,
-				20C2B61C56CB4AA39B95E795 /* BentonSansRegular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,10 +651,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -676,10 +719,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

@@ -4,6 +4,7 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import Foundation from 'react-native-vector-icons/Foundation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -22,6 +23,8 @@ const getIconName = (type: IconType) => {
       return EvilIcons;
     case 'FontAwesome':
       return FontAwesome;
+    case 'FontAwesome6':
+      return FontAwesome6;
     case 'Feather':
       return Feather;
     case 'Fontisto':

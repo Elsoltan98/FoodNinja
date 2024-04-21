@@ -1,11 +1,12 @@
 import { View, Text, ImageBackground, StyleSheet } from 'react-native';
 import React from 'react';
-import { fontScale, sHeight, sWidth, scale } from '../../config/scale';
+import { fontScale, sHeight, sWidth, scale, vScale } from '../../config/scale';
 import { SvgXml } from 'react-native-svg';
 import { Logo } from '../../assets/Logo';
 import AppText from '../../components/AppText';
 import Colors from '../../config/colors';
 import CustomInput from '../../components/CustomInput';
+import CustomIcon from '../../components/Icon';
 
 const Login = () => {
   return (
@@ -22,8 +23,20 @@ const Login = () => {
             fontWeight="bold"
           />
         </View>
-        <View>
-          <CustomInput />
+        <View style={styles.formContainer}>
+          <CustomInput inputPlaceHolder="Email" />
+          <CustomInput
+            withIcons
+            inputPlaceHolder="Password"
+            rightIcon={
+              <CustomIcon
+                type="FontAwesome6"
+                name="eye"
+                color={Colors.light.gridPrimary}
+                size={fontScale(20)}
+              />
+            }
+          />
         </View>
       </ImageBackground>
     </View>
@@ -38,6 +51,9 @@ const styles = StyleSheet.create({
   imageContainer: {
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  formContainer: {
+    marginTop: vScale(50),
   },
 });
 

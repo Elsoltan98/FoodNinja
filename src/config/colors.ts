@@ -43,7 +43,7 @@ const Colors: ColorPalettes = {
     gridPrimary: '#53E88B',
     gridSecondary: '#15BE77',
     lightGray: '#F4F4F4',
-    shadow: '#3B3B3B',
+    shadow: '#5A6CEA',
     ...sharedColors,
   },
 };

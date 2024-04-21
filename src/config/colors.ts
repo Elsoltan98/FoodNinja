@@ -3,7 +3,6 @@ export type ColorTheme = {
   secondary: string;
   textSecondary: string;
   textPrimary: string;
-  redText: string;
 };
 
 const sharedColors = {
@@ -26,15 +25,14 @@ const Colors: ColorPalettes = {
     secondary: '#161629',
     textPrimary: sharedColors.white,
     textSecondary: '#67686E',
-    redText: '#DC3535',
+
     ...sharedColors,
   },
   light: {
     primary: '#F8F8F8',
     secondary: '#E4E4E4',
-    textPrimary: '#161629',
+    textPrimary: '#09051C',
     textSecondary: '#9D5DB0',
-    redText: '#DC3535',
     ...sharedColors,
   },
 };

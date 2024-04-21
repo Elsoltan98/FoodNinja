@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { TextStyle, Text, StyleSheet } from 'react-native';
 import React, { FC } from 'react';
 import fonts from '../../config/fonts';
 import { fontScale } from '../../config/scale';
@@ -8,15 +8,31 @@ interface AppTextProps {
   size?: number;
   color?: string;
   text: string;
+  fontWeight?: 'bold' | 'medium';
+  style?: TextStyle;
 }
 
-const AppText: FC<AppTextProps> = ({ size, color, text }) => {
+const AppText: FC<AppTextProps> = ({
+  size,
+  color,
+  text,
+  fontWeight,
+  style,
+}) => {
   return (
-    <View>
-      <Text style={[styles.text, { fontSize: size, color: color }]}>
-        {text}
-      </Text>
-    </View>
+    <Text
+      style={[
+        style,
+        styles.text,
+        fontWeight === 'bold'
+          ? styles.textBold
+          : fontWeight === 'medium'
+            ? styles.textMedium
+            : null,
+        { fontSize: size, color: color },
+      ]}>
+      {text}
+    </Text>
   );
 };
 
@@ -28,8 +44,10 @@ const styles = StyleSheet.create({
   },
   textBold: {
     fontFamily: fonts.BOLD,
+    fontWeight: 'bold',
   },
   textMedium: {
+    fontWeight: '600',
     fontFamily: fonts.MEDIUM,
   },
 });

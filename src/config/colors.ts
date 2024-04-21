@@ -5,6 +5,8 @@ export type ColorTheme = {
   textPrimary: string;
   gridPrimary: string;
   gridSecondary: string;
+  lightGray: string;
+  shadow: string;
 };
 
 const sharedColors = {
@@ -29,6 +31,8 @@ const Colors: ColorPalettes = {
     textSecondary: '#67686E',
     gridPrimary: '#0',
     gridSecondary: '#0',
+    lightGray: '#0',
+    shadow: '0',
     ...sharedColors,
   },
   light: {
@@ -38,6 +42,8 @@ const Colors: ColorPalettes = {
     textSecondary: '#9D5DB0',
     gridPrimary: '#53E88B',
     gridSecondary: '#15BE77',
+    lightGray: '#F4F4F4',
+    shadow: '#3B3B3B',
     ...sharedColors,
   },
 };

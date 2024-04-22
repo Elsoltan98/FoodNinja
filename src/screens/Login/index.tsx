@@ -43,7 +43,7 @@ const Login = () => {
                 withIcons
                 inputPlaceHolder="Password"
                 isPassword
-                show={show}
+                show={!show}
                 value={props.values.password}
                 onChangeText={props.handleChange('password')}
                 onBlur={props.handleBlur('password')}
@@ -51,7 +51,7 @@ const Login = () => {
                   !show ? (
                     <CustomIcon
                       type="FontAwesome6"
-                      name="eye-slash"
+                      name="eye"
                       color={Colors.light.gridPrimary}
                       size={fontScale(20)}
                       onPress={() => setShow(!show)}
@@ -59,7 +59,7 @@ const Login = () => {
                   ) : (
                     <CustomIcon
                       type="FontAwesome6"
-                      name="eye"
+                      name="eye-slash"
                       color={Colors.light.gridPrimary}
                       size={fontScale(20)}
                       onPress={() => setShow(!show)}

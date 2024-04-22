@@ -3,7 +3,7 @@ import {
   Text,
   ImageBackground,
   StyleSheet,
-  TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import React, { useState } from 'react';
 import { fontScale, sHeight, sWidth, scale, vScale } from '../../config/scale';
@@ -17,31 +17,34 @@ import { Formik } from 'formik';
 import CustomBtn from '../../components/CustomBtn';
 import { facebookLogo } from '../../assets/facebookLogo';
 import { googleLogo } from '../../assets/googleLogo';
-import { useNavigation } from '@react-navigation/native';
-import NavTypes from '../../config/NavTypes';
 
-const Login = () => {
+const Signup = () => {
   const [show, setShow] = useState<boolean>(false);
-  const navigation: any = useNavigation();
   return (
-    <View style={{ flex: 1 }}>
+    <ScrollView style={{ flex: 1 }}>
       <ImageBackground
         source={require('./../../assets/bg.png')}
         style={styles.container}>
         <View style={styles.imageContainer}>
           <SvgXml xml={Logo} width={sWidth * 0.4} height={sHeight * 0.3} />
           <AppText
-            text="Login To Your Account"
+            text="Sign Up For Free"
             size={fontScale(20)}
             color={Colors.light.textPrimary}
             fontWeight="bold"
           />
         </View>
         <Formik
-          initialValues={{ email: '', password: '' }}
+          initialValues={{ userName: '', email: '', password: '' }}
           onSubmit={values => console.log(values)}>
           {props => (
             <View style={styles.formContainer}>
+              <CustomInput
+                inputPlaceHolder="User Name"
+                value={props.values.userName}
+                onChangeText={props.handleChange('userName')}
+                onBlur={props.handleBlur('userName')}
+              />
               <CustomInput
                 inputPlaceHolder="Email"
                 value={props.values.email}
@@ -112,17 +115,14 @@ const Login = () => {
         </View>
         <View style={styles.footerContainer}>
           <CustomBtn title="Login" />
-          <TouchableOpacity
-            onPress={() => navigation.navigate(NavTypes.SIGN_UP)}>
-            <AppText
-              text="Don’t have an account? Sign up"
-              style={styles.signupText}
-              color={Colors.light.gridSecondary}
-            />
-          </TouchableOpacity>
+          <AppText
+            text="Don’t have an account? Sign up"
+            style={styles.signupText}
+            color={Colors.light.gridSecondary}
+          />
         </View>
       </ImageBackground>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -167,4 +167,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default Signup;

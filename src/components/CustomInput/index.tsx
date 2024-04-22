@@ -42,8 +42,13 @@ const CustomInput: FC<CustomInputProps> = ({
   return (
     <View>
       {withIcons ? (
-        <View style={[styles.inputContainer, styles.iconsContainer]}>
-          <View>
+        <View
+          style={[
+            styles.inputContainer,
+            styles.iconsContainer,
+            leftIcon && styles.withLeftContainer,
+          ]}>
+          <View style={styles.leftContainer}>
             {leftIcon && leftIcon}
             <TextInput
               placeholder={inputPlaceHolder}
@@ -51,7 +56,10 @@ const CustomInput: FC<CustomInputProps> = ({
               onChangeText={onChangeText}
               onBlur={onBlur}
               secureTextEntry={isPassword ? show : false}
-              style={styles.inputWidth}
+              style={[
+                styles.inputWidth,
+                { marginLeft: leftIcon ? scale(10) : 0 },
+              ]}
             />
           </View>
           {rightIcon && rightIcon}
@@ -91,8 +99,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
   },
+  withLeftContainer: {
+    paddingLeft: scale(16),
+  },
+
   inputWidth: {
     width: sWidth * 0.63,
+  },
+  leftContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 });
 

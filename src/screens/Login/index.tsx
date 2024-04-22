@@ -79,13 +79,7 @@ const Login = () => {
             </View>
           )}
         </Formik>
-        <View
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginTop: vScale(10),
-            marginBottom: vScale(20),
-          }}>
+        <View style={styles.continueContainer}>
           <AppText text="Or Continue With" fontWeight="bold" />
           <View style={styles.socialContainer}>
             <CustomBtn
@@ -137,6 +131,12 @@ const styles = StyleSheet.create({
   },
   formContainer: {
     marginTop: vScale(50),
+  },
+  continueContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: vScale(10),
+    marginBottom: vScale(20),
   },
   socialContainer: {
     flexDirection: 'row',

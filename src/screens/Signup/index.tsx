@@ -17,6 +17,9 @@ import { Formik } from 'formik';
 import CustomBtn from '../../components/CustomBtn';
 import { facebookLogo } from '../../assets/facebookLogo';
 import { googleLogo } from '../../assets/googleLogo';
+import { ProfileIcon } from '../../assets/Profile';
+import { MessageIcon } from '../../assets/Message';
+import { LockIcon } from '../../assets/Lock';
 
 const Signup = () => {
   const [show, setShow] = useState<boolean>(false);
@@ -44,21 +47,37 @@ const Signup = () => {
                 value={props.values.userName}
                 onChangeText={props.handleChange('userName')}
                 onBlur={props.handleBlur('userName')}
+                withIcons
+                leftIcon={
+                  <SvgXml
+                    xml={ProfileIcon}
+                    width={sWidth * 0.06}
+                    height={sHeight * 0.03}
+                  />
+                }
               />
               <CustomInput
                 inputPlaceHolder="Email"
                 value={props.values.email}
                 onChangeText={props.handleChange('email')}
                 onBlur={props.handleBlur('email')}
+                withIcons
+                leftIcon={
+                  <SvgXml
+                    xml={MessageIcon}
+                    width={sWidth * 0.06}
+                    height={sHeight * 0.03}
+                  />
+                }
               />
               <CustomInput
-                withIcons
                 inputPlaceHolder="Password"
                 isPassword
                 show={!show}
                 value={props.values.password}
                 onChangeText={props.handleChange('password')}
                 onBlur={props.handleBlur('password')}
+                withIcons
                 rightIcon={
                   !show ? (
                     <CustomIcon
@@ -77,6 +96,13 @@ const Signup = () => {
                       onPress={() => setShow(!show)}
                     />
                   )
+                }
+                leftIcon={
+                  <SvgXml
+                    xml={LockIcon}
+                    width={sWidth * 0.06}
+                    height={sHeight * 0.03}
+                  />
                 }
               />
             </View>

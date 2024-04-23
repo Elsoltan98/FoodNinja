@@ -1,4 +1,9 @@
-import { View, ImageBackground, StyleSheet, ScrollView } from 'react-native';
+import {
+  View,
+  ImageBackground,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
 import React, { useState } from 'react';
 import { fontScale, sHeight, sWidth, scale, vScale } from '@config/scale';
 import { SvgXml } from 'react-native-svg';
@@ -9,17 +14,18 @@ import CustomInput from '@components/CustomInput';
 import CustomIcon from '@components/Icon';
 import { Formik } from 'formik';
 import CustomBtn from '@components/CustomBtn';
-import { facebookLogo } from '@assets/facebookLogo';
-import { googleLogo } from '@assets/googleLogo';
 import { ProfileIcon } from '@assets/Profile';
 import { MessageIcon } from '@assets/Message';
 import { LockIcon } from '@assets/Lock';
+import { useNavigation } from '@react-navigation/native';
+import NavTypes from '@config/NavTypes';
 
 const Signup = () => {
   const [show, setShow] = useState<boolean>(false);
-
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const navigation: { navigate: any } = useNavigation();
   return (
-    <ScrollView style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
       <ImageBackground
         source={require('./../../assets/bg.png')}
         style={styles.container}>
@@ -103,47 +109,20 @@ const Signup = () => {
             </View>
           )}
         </Formik>
-        <View
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginTop: vScale(10),
-            marginBottom: vScale(20),
-          }}>
-          <AppText text="Or Continue With" fontWeight="bold" />
-          <View style={styles.socialContainer}>
-            <CustomBtn
-              title="Facebook"
-              icon={<SvgXml xml={facebookLogo} />}
-              style={[styles.socialBtns, { marginRight: scale(20) }]}
-              colors={[Colors.light.white, Colors.light.white]}
-              textColor={Colors.light.textPrimary}
-            />
-            <CustomBtn
-              title="Google"
-              icon={<SvgXml xml={googleLogo} />}
-              style={styles.socialBtns}
-              colors={[Colors.light.white, Colors.light.white]}
-              textColor={Colors.light.textPrimary}
-            />
-          </View>
-          <AppText
-            text="Forgot Your Password?"
-            fontWeight="bold"
-            style={styles.signupText}
-            color={Colors.light.gridSecondary}
-          />
-        </View>
+        <View style={styles.continueContainer}></View>
         <View style={styles.footerContainer}>
-          <CustomBtn title="Login" />
-          <AppText
-            text="Don’t have an account? Sign up"
-            style={styles.signupText}
-            color={Colors.light.gridSecondary}
-          />
+          <CustomBtn title="Create Account" />
+          <TouchableOpacity
+            onPress={() => navigation.navigate(NavTypes.LOG_IN)}>
+            <AppText
+              text="already have an account?"
+              style={styles.signupText}
+              color={Colors.light.gridSecondary}
+            />
+          </TouchableOpacity>
         </View>
       </ImageBackground>
-    </ScrollView>
+    </View>
   );
 };
 
@@ -158,6 +137,12 @@ const styles = StyleSheet.create({
   },
   formContainer: {
     marginTop: vScale(50),
+  },
+  continueContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: vScale(10),
+    marginBottom: vScale(20),
   },
   socialContainer: {
     flexDirection: 'row',

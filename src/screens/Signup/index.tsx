@@ -1,10 +1,4 @@
-import {
-  View,
-  Text,
-  ImageBackground,
-  StyleSheet,
-  ScrollView,
-} from 'react-native';
+import { View, ImageBackground, StyleSheet, ScrollView } from 'react-native';
 import React, { useState } from 'react';
 import { fontScale, sHeight, sWidth, scale, vScale } from '@config/scale';
 import { SvgXml } from 'react-native-svg';

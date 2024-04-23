@@ -18,6 +18,7 @@ declare module 'react-native-vector-icons/Octicons';
 declare module 'react-native-vector-icons/Zocial';
 declare module 'react-native-vector-icons/SimpleLineIcons';
 declare module 'react-native-vector-icons';
+declare module '@eslint/js';
 
 type IconType =
   | 'AntDesign'

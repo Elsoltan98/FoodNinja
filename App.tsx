@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import React, { useEffect } from 'react';
 import Colors from './src/config/colors';
 import SplashScreen from 'react-native-splash-screen';

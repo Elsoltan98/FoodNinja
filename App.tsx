@@ -5,6 +5,8 @@ import SplashScreen from 'react-native-splash-screen';
 import AppNav from './src/navigation';
 
 const App = () => {
+  const a = 12;
+
   useEffect(() => {
     const timer = setTimeout(() => {
       if (SplashScreen) {

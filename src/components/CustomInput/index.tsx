@@ -7,8 +7,8 @@ import {
   TextInputFocusEventData,
 } from 'react-native';
 import React, { FC, ReactElement } from 'react';
-import { fontScale, sHeight, sWidth, scale, vScale } from '../../config/scale';
-import Colors from '../../config/colors';
+import { fontScale, sHeight, sWidth, scale, vScale } from '@config/scale';
+import Colors from '@config/colors';
 
 interface CustomInputProps {
   withIcons?: boolean;

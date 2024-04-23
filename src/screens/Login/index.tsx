@@ -6,19 +6,19 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, { useState } from 'react';
-import { fontScale, sHeight, sWidth, scale, vScale } from '../../config/scale';
+import { fontScale, sHeight, sWidth, scale, vScale } from '@config/scale';
 import { SvgXml } from 'react-native-svg';
-import { Logo } from '../../assets/Logo';
-import AppText from '../../components/AppText';
-import Colors from '../../config/colors';
-import CustomInput from '../../components/CustomInput';
-import CustomIcon from '../../components/Icon';
+import { Logo } from '@assets/Logo';
+import AppText from '@components/AppText';
+import Colors from '@config/colors';
+import CustomInput from '@components/CustomInput';
+import CustomIcon from '@components/Icon';
 import { Formik } from 'formik';
-import CustomBtn from '../../components/CustomBtn';
-import { facebookLogo } from '../../assets/facebookLogo';
-import { googleLogo } from '../../assets/googleLogo';
+import CustomBtn from '@components/CustomBtn';
+import { facebookLogo } from '@assets/facebookLogo';
+import { googleLogo } from '@assets/googleLogo';
 import { useNavigation } from '@react-navigation/native';
-import NavTypes from '../../config/NavTypes';
+import NavTypes from '@config/NavTypes';
 
 const Login = () => {
   const [show, setShow] = useState<boolean>(false);
@@ -26,7 +26,7 @@ const Login = () => {
   return (
     <View style={{ flex: 1 }}>
       <ImageBackground
-        source={require('./../../assets/bg.png')}
+        source={require('@assets/bg.png')}
         style={styles.container}>
         <View style={styles.imageContainer}>
           <SvgXml xml={Logo} width={sWidth * 0.4} height={sHeight * 0.3} />

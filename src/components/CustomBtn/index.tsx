@@ -8,8 +8,8 @@ import {
 } from 'react-native';
 import React, { FC, ReactNode } from 'react';
 import LinearGradient from 'react-native-linear-gradient';
-import Colors from '../../config/colors';
-import { fontScale, scale, vScale } from '../../config/scale';
+import Colors from '@config/colors';
+import { fontScale, scale, vScale } from '@config/scale';
 import AppText from '../AppText';
 
 interface CustomBtnProps {

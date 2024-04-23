@@ -6,23 +6,24 @@ import {
   ScrollView,
 } from 'react-native';
 import React, { useState } from 'react';
-import { fontScale, sHeight, sWidth, scale, vScale } from '../../config/scale';
+import { fontScale, sHeight, sWidth, scale, vScale } from '@config/scale';
 import { SvgXml } from 'react-native-svg';
-import { Logo } from '../../assets/Logo';
-import AppText from '../../components/AppText';
-import Colors from '../../config/colors';
-import CustomInput from '../../components/CustomInput';
-import CustomIcon from '../../components/Icon';
+import { Logo } from '@assets/Logo';
+import AppText from '@components/AppText';
+import Colors from '@config/colors';
+import CustomInput from '@components/CustomInput';
+import CustomIcon from '@components/Icon';
 import { Formik } from 'formik';
-import CustomBtn from '../../components/CustomBtn';
-import { facebookLogo } from '../../assets/facebookLogo';
-import { googleLogo } from '../../assets/googleLogo';
-import { ProfileIcon } from '../../assets/Profile';
-import { MessageIcon } from '../../assets/Message';
-import { LockIcon } from '../../assets/Lock';
+import CustomBtn from '@components/CustomBtn';
+import { facebookLogo } from '@assets/facebookLogo';
+import { googleLogo } from '@assets/googleLogo';
+import { ProfileIcon } from '@assets/Profile';
+import { MessageIcon } from '@assets/Message';
+import { LockIcon } from '@assets/Lock';
 
 const Signup = () => {
   const [show, setShow] = useState<boolean>(false);
+
   return (
     <ScrollView style={{ flex: 1 }}>
       <ImageBackground

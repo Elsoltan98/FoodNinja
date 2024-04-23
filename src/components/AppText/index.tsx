@@ -1,8 +1,8 @@
 import { TextStyle, Text, StyleSheet } from 'react-native';
 import React, { FC } from 'react';
-import fonts from '../../config/fonts';
-import { fontScale } from '../../config/scale';
-import Colors from '../../config/colors';
+import fonts from '@config/fonts';
+import { fontScale } from '@config/scale';
+import Colors from '@config/colors';
 
 interface AppTextProps {
   size?: number;

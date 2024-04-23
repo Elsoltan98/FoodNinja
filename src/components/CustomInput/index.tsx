@@ -1,6 +1,5 @@
 import {
   View,
-  Text,
   TextInput,
   StyleSheet,
   NativeSyntheticEvent,
@@ -36,8 +35,6 @@ const CustomInput: FC<CustomInputProps> = ({
   onBlur,
   isPassword,
   show,
-  touched,
-  errors,
 }) => {
   return (
     <View>

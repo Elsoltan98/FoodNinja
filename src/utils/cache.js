@@ -4,6 +4,7 @@ const store = async (key, value) => {
   try {
     await AsyncStorage.setItem(key, JSON.stringify(value));
   } catch (error) {
+    // eslint-disable-next-line no-undef
     console.log(error);
   }
 };
@@ -19,6 +20,7 @@ const get = async key => {
 
     return item;
   } catch (error) {
+    // eslint-disable-next-line no-undef
     console.log(error);
   }
 };

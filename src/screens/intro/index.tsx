@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import React, { useState } from 'react';
 import { SvgXml } from 'react-native-svg';
 import { Intro1 } from '@assets/intro1';
@@ -11,7 +11,8 @@ import { useNavigation } from '@react-navigation/native';
 import NavTypes from '@config/NavTypes';
 
 const Intro = () => {
-  const [nextIntro, setNextIntro] = useState<Number>(0);
+  const [nextIntro, setNextIntro] = useState<number>(0);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const navigation: any = useNavigation();
   return (
     <View style={styles.container}>

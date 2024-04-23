@@ -1,7 +1,9 @@
 /**
  * @format
  */
+// eslint-disable-next-line no-undef
 if (__DEV__) {
+  // eslint-disable-next-line no-undef
   require('./ReactotronConfig');
 }
 

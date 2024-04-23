@@ -1,6 +1,5 @@
 import {
   View,
-  Text,
   ImageBackground,
   StyleSheet,
   TouchableOpacity,
@@ -22,6 +21,7 @@ import NavTypes from '@config/NavTypes';
 
 const Login = () => {
   const [show, setShow] = useState<boolean>(false);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const navigation: any = useNavigation();
   return (
     <View style={{ flex: 1 }}>

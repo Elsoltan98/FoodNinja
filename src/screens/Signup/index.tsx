@@ -19,11 +19,15 @@ import { MessageIcon } from '@assets/Message';
 import { LockIcon } from '@assets/Lock';
 import { useNavigation } from '@react-navigation/native';
 import NavTypes from '@config/NavTypes';
+import CustomCheckbox from '@components/CustomCheckBox';
 
 const Signup = () => {
   const [show, setShow] = useState<boolean>(false);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const navigation: { navigate: any } = useNavigation();
+  const [checked, setChecked] = useState<boolean>(false);
+  const [checkedEmail, setCheckedEmail] = useState<boolean>(false);
+
   return (
     <View style={{ flex: 1 }}>
       <ImageBackground
@@ -109,7 +113,30 @@ const Signup = () => {
             </View>
           )}
         </Formik>
-        <View style={styles.continueContainer}></View>
+        <View style={styles.continueContainer}>
+          <View style={styles.checkContainer}>
+            <CustomCheckbox
+              checked={checked}
+              onPress={() => setChecked(!checked)}
+            />
+            <AppText
+              text="Keep Me Signed In"
+              color={Colors.light.textPrimary}
+              size={fontScale(14)}
+            />
+          </View>
+          <View style={styles.checkContainer}>
+            <CustomCheckbox
+              checked={checkedEmail}
+              onPress={() => setCheckedEmail(!checkedEmail)}
+            />
+            <AppText
+              text="Email Me About Special Pricing"
+              color={Colors.light.textPrimary}
+              size={fontScale(14)}
+            />
+          </View>
+        </View>
         <View style={styles.footerContainer}>
           <CustomBtn title="Create Account" />
           <TouchableOpacity
@@ -140,27 +167,14 @@ const styles = StyleSheet.create({
   },
   continueContainer: {
     justifyContent: 'center',
-    alignItems: 'center',
     marginTop: vScale(10),
-    marginBottom: vScale(20),
+    marginBottom: vScale(10),
+    marginLeft: scale(10),
   },
-  socialContainer: {
+  checkContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    marginVertical: vScale(20),
-  },
-  socialBtns: {
-    paddingHorizontal: scale(0),
-    width: sWidth * 0.42,
-    backgroundColor: Colors.light.white,
-    borderWidth: scale(1),
-    borderColor: Colors.light.lightGray,
-    elevation: 20,
-    shadowColor: Colors.light.shadow,
-    shadowOffset: { width: 2, height: 5 },
-    shadowOpacity: 0.3,
-    shadowRadius: 15,
+    marginBottom: vScale(15),
   },
   footerContainer: {
     justifyContent: 'center',

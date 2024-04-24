@@ -23,7 +23,7 @@ const CustomCheckbox: FC<CustomCheckboxProps> = ({ checked, onPress }) => {
               borderRadius: 15,
               borderWidth: 2,
               marginRight: scale(10),
-              borderColor: checked ? 'transparent' : '#eceff1',
+              borderColor: checked ? 'transparent' : Colors.light.checkBorder,
               backgroundColor: checked ? 'transparent' : 'white', // Change this to apply gradient
             },
             !checked && {

@@ -7,6 +7,7 @@ export type ColorTheme = {
   gridSecondary: string;
   lightGray: string;
   shadow: string;
+  checkBorder: string;
 };
 
 const sharedColors = {
@@ -33,6 +34,7 @@ const Colors: ColorPalettes = {
     gridSecondary: '#0',
     lightGray: '#0',
     shadow: '0',
+    checkBorder: '0',
     ...sharedColors,
   },
   light: {
@@ -44,6 +46,7 @@ const Colors: ColorPalettes = {
     gridSecondary: '#15BE77',
     lightGray: '#F4F4F4',
     shadow: '#5A6CEA',
+    checkBorder: '#eceff1',
     ...sharedColors,
   },
 };

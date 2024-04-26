@@ -138,7 +138,7 @@ const Signup = () => {
           </View>
         </View>
         <View style={styles.footerContainer}>
-          <CustomBtn title="Create Account" />
+          <CustomBtn title="Create Account" onPress={() => navigation.navigate(NavTypes.SIGN_UP_PROCESS)} />
           <TouchableOpacity
             onPress={() => navigation.navigate(NavTypes.LOG_IN)}>
             <AppText

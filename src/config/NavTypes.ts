@@ -1,6 +1,7 @@
 export default {
   INTRO: 'INTRO',
-  LOG_IN: 'login',
+  LOG_IN: 'LOG_IN',
   SIGN_UP: 'SIGN_UP',
+  SIGN_UP_PROCESS: 'SIGN_UP_PROCESS',
   AUTH_NAV: 'AUTH_NAV',
 };

@@ -1,6 +1,7 @@
 import { ImageBackground, StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import CustomIcon from '@components/Icon'
+import { SvgXml } from 'react-native-svg'
+import { BackBg } from '@assets/BackBg'
 
 
 const SignupProcess = () => {
@@ -10,7 +11,7 @@ const SignupProcess = () => {
         source={require('./../../assets/bg.png')}
         style={styles.container}>
       <TouchableOpacity style={styles.backContainer}>
-        <CustomIcon type="Entypo" name='chevron-left' size={20} color='#DA6317' />
+        <SvgXml xml={BackBg}  />
       </TouchableOpacity>
       </ImageBackground>
     </View>

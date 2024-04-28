@@ -17,6 +17,7 @@ import { VisaIcon } from "@assets/visa ";
 import { Payoneer } from "@assets/Payoneer";
 import { GalleryIcon } from "@assets/Gallery Icon";
 import { CameraIcon } from "@assets/Camera Icon";
+import { PinLogo } from "@assets/PinLogo";
 
 const SignupProcess = () => {
   const [processNum, setProcessNum] = useState<number>(0);
@@ -100,7 +101,7 @@ const SignupProcess = () => {
               />
             </View>
           </View>
-        ) : (
+        ) : processNum === 2 ? (
           <View style={styles.overlayContainer}>
             <TouchableOpacity style={styles.backContainer}>
               <CustomIcon
@@ -133,6 +134,49 @@ const SignupProcess = () => {
                 title=""
                 icon={<SvgXml xml={CameraIcon} />}
               />
+            </View>
+          </View>
+        ) : (
+          <View style={styles.overlayContainer}>
+            <TouchableOpacity style={styles.backContainer}>
+              <CustomIcon
+                type="Entypo"
+                name="chevron-left"
+                size={fontScale(20)}
+                color={Colors.light.orange}
+              />
+            </TouchableOpacity>
+            <View>
+              <AppText
+                text="Set Your Location"
+                fontWeight="bold"
+                size={fontScale(30)}
+                style={{ marginBottom: vScale(20) }}
+              />
+              <AppText
+                text={`This data will be displayed in your account \nprofile for security`}
+                style={{ marginBottom: vScale(40) }}
+              />
+              <View style={[styles.locationBtns, styles.photoBtns]}>
+                <View style={styles.yourLocation}>
+                  <SvgXml xml={PinLogo} />
+                  <AppText
+                    text="Your Location"
+                    size={fontScale(15)}
+                    style={{ marginLeft: scale(10) }}
+                    fontWeight="medium"
+                  />
+                </View>
+                <CustomBtn
+                  title="Set Location"
+                  style={{
+                    paddingHorizontal: scale(10),
+                    bottom: -15,
+                  }}
+                  colors={[Colors.light.lightGray2, Colors.light.lightGray2]}
+                  textColor={Colors.light.textPrimary}
+                />
+              </View>
             </View>
           </View>
         )}
@@ -191,6 +235,24 @@ const styles = StyleSheet.create({
   photoBtns: {
     height: sHeight * 0.18,
     borderRadius: scale(22),
+  },
+  locationBtns: {
+    paddingHorizontal: scale(0),
+    marginBottom: vScale(20),
+    backgroundColor: Colors.light.white,
+    borderWidth: scale(1),
+    borderColor: Colors.light.lightGray,
+    elevation: 20,
+    shadowColor: Colors.light.shadow,
+    shadowOffset: { width: 2, height: 5 },
+    shadowOpacity: 0.1,
+    shadowRadius: 15,
+  },
+  yourLocation: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingHorizontal: scale(20),
+    paddingVertical: scale(20),
   },
 });
 export default SignupProcess;

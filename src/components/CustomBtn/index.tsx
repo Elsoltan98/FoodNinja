@@ -48,6 +48,7 @@ const CustomBtn: FC<CustomBtnProps> = ({
           size={fontScale(16)}
           color={textColor ? textColor : Colors.light.white}
           fontWeight="bold"
+          style={{ textAlign: "center" }}
         />
       </LinearGradient>
     </TouchableOpacity>

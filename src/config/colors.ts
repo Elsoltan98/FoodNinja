@@ -11,6 +11,7 @@ export type ColorTheme = {
   orange: string;
   lightOrange: string;
   transWhite: string;
+  lightGray2: string;
 };
 
 const sharedColors = {
@@ -41,6 +42,7 @@ const Colors: ColorPalettes = {
     orange: "0",
     lightOrange: "0",
     transWhite: "0",
+    lightGray2: "0",
     ...sharedColors,
   },
   light: {
@@ -51,6 +53,7 @@ const Colors: ColorPalettes = {
     gridPrimary: "#53E88B",
     gridSecondary: "#15BE77",
     lightGray: "#F4F4F4",
+    lightGray2: "#F6F6F6",
     shadow: "#5A6CEA",
     checkBorder: "#eceff1",
     orange: "#DA6317",

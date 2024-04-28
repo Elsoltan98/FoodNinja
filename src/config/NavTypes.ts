@@ -3,5 +3,6 @@ export default {
   LOG_IN: "LOG_IN",
   SIGN_UP: "SIGN_UP",
   SIGN_UP_PROCESS: "SIGN_UP_PROCESS",
+  SIGN_UP_SUCCESS: "SIGN_UP_SUCCESS",
   AUTH_NAV: "AUTH_NAV",
 };

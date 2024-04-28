@@ -18,9 +18,13 @@ import { Payoneer } from "@assets/Payoneer";
 import { GalleryIcon } from "@assets/Gallery Icon";
 import { CameraIcon } from "@assets/Camera Icon";
 import { PinLogo } from "@assets/PinLogo";
+import { useNavigation } from "@react-navigation/native";
+import NavTypes from "@config/NavTypes";
 
 const SignupProcess = () => {
   const [processNum, setProcessNum] = useState<number>(0);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const navigation: any = useNavigation();
 
   //console.log(processNum);
 
@@ -181,7 +185,14 @@ const SignupProcess = () => {
           </View>
         )}
         <View style={styles.nextContainer}>
-          <CustomBtn title="Next" onPress={nextProcess} />
+          <CustomBtn
+            title="Next"
+            onPress={() =>
+              processNum === 3
+                ? navigation.navigate(NavTypes.SIGN_UP_SUCCESS)
+                : nextProcess()
+            }
+          />
         </View>
       </ImageBackground>
     </View>

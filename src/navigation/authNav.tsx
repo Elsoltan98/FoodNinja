@@ -4,6 +4,7 @@ import NavTypes from "@config/NavTypes";
 import Login from "../screens/Login";
 import Signup from "../screens/Signup";
 import SignupProcess from "../screens/SignUpProcess";
+import SignUpSuccess from "../screens/SignUpSuccess";
 const Stack = createNativeStackNavigator();
 const AuthNav = () => {
   return (
@@ -25,6 +26,13 @@ const AuthNav = () => {
       <Stack.Screen
         name={NavTypes.SIGN_UP_PROCESS}
         component={SignupProcess}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name={NavTypes.SIGN_UP_SUCCESS}
+        component={SignUpSuccess}
         options={{
           headerShown: false,
         }}

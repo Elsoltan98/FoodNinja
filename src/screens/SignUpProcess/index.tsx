@@ -15,6 +15,8 @@ import { SvgXml } from "react-native-svg";
 import { Paypal } from "@assets/paypal";
 import { VisaIcon } from "@assets/visa ";
 import { Payoneer } from "@assets/Payoneer";
+import { GalleryIcon } from "@assets/Gallery Icon";
+import { CameraIcon } from "@assets/Camera Icon";
 
 const SignupProcess = () => {
   const [processNum, setProcessNum] = useState<number>(0);
@@ -57,7 +59,7 @@ const SignupProcess = () => {
               <CustomInput inputPlaceHolder="Mobile Number" />
             </View>
           </View>
-        ) : (
+        ) : processNum === 1 ? (
           <View style={styles.overlayContainer}>
             <TouchableOpacity style={styles.backContainer}>
               <CustomIcon
@@ -95,6 +97,41 @@ const SignupProcess = () => {
                 colors={[Colors.light.white, Colors.light.white]}
                 title=""
                 icon={<SvgXml xml={Payoneer} />}
+              />
+            </View>
+          </View>
+        ) : (
+          <View style={styles.overlayContainer}>
+            <TouchableOpacity style={styles.backContainer}>
+              <CustomIcon
+                type="Entypo"
+                name="chevron-left"
+                size={fontScale(20)}
+                color={Colors.light.orange}
+              />
+            </TouchableOpacity>
+            <View>
+              <AppText
+                text="Upload Your Photo Profile"
+                fontWeight="bold"
+                size={fontScale(30)}
+                style={{ marginBottom: vScale(20) }}
+              />
+              <AppText
+                text={`This data will be displayed in your account \nprofile for security`}
+                style={{ marginBottom: vScale(40) }}
+              />
+              <CustomBtn
+                style={[styles.paymentBtns, styles.photoBtns]}
+                colors={[Colors.light.white, Colors.light.white]}
+                title=""
+                icon={<SvgXml xml={GalleryIcon} />}
+              />
+              <CustomBtn
+                style={[styles.paymentBtns, styles.photoBtns]}
+                colors={[Colors.light.white, Colors.light.white]}
+                title=""
+                icon={<SvgXml xml={CameraIcon} />}
               />
             </View>
           </View>
@@ -150,6 +187,10 @@ const styles = StyleSheet.create({
     shadowRadius: 15,
     justifyContent: "center",
     alignItems: "center",
+  },
+  photoBtns: {
+    height: sHeight * 0.18,
+    borderRadius: scale(22),
   },
 });
 export default SignupProcess;

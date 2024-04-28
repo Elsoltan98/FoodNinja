@@ -4,10 +4,10 @@ import {
   StyleSheet,
   NativeSyntheticEvent,
   TextInputFocusEventData,
-} from 'react-native';
-import React, { FC, ReactElement } from 'react';
-import { fontScale, sHeight, sWidth, scale, vScale } from '@config/scale';
-import Colors from '@config/colors';
+} from "react-native";
+import React, { FC, ReactElement } from "react";
+import { fontScale, sHeight, sWidth, scale, vScale } from "@config/scale";
+import Colors from "@config/colors";
 
 interface CustomInputProps {
   withIcons?: boolean;
@@ -44,7 +44,8 @@ const CustomInput: FC<CustomInputProps> = ({
             styles.inputContainer,
             styles.iconsContainer,
             leftIcon && styles.withLeftContainer,
-          ]}>
+          ]}
+        >
           <View style={styles.leftContainer}>
             {leftIcon && leftIcon}
             <TextInput
@@ -92,9 +93,9 @@ const styles = StyleSheet.create({
     fontSize: fontScale(16),
   },
   iconsContainer: {
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    flexDirection: 'row',
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexDirection: "row",
   },
   withLeftContainer: {
     paddingLeft: scale(16),
@@ -104,9 +105,9 @@ const styles = StyleSheet.create({
     width: sWidth * 0.63,
   },
   leftContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
 });
 

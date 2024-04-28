@@ -1,10 +1,10 @@
-import CustomIcon from '@components/Icon';
-import Colors from '@config/colors';
-import { fontScale } from '@config/scale';
-import React, { FC } from 'react';
-import { GestureResponderEvent, TouchableOpacity, View } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
-import { scale } from 'react-native-size-matters';
+import CustomIcon from "@components/Icon";
+import Colors from "@config/colors";
+import { fontScale } from "@config/scale";
+import React, { FC } from "react";
+import { GestureResponderEvent, TouchableOpacity, View } from "react-native";
+import LinearGradient from "react-native-linear-gradient";
+import { scale } from "react-native-size-matters";
 
 interface CustomCheckboxProps {
   checked: boolean;
@@ -14,7 +14,7 @@ interface CustomCheckboxProps {
 const CustomCheckbox: FC<CustomCheckboxProps> = ({ checked, onPress }) => {
   return (
     <TouchableOpacity onPress={onPress}>
-      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <View style={{ flexDirection: "row", alignItems: "center" }}>
         <View
           style={[
             {
@@ -23,8 +23,8 @@ const CustomCheckbox: FC<CustomCheckboxProps> = ({ checked, onPress }) => {
               borderRadius: 15,
               borderWidth: 2,
               marginRight: scale(10),
-              borderColor: checked ? 'transparent' : Colors.light.checkBorder,
-              backgroundColor: checked ? 'transparent' : 'white', // Change this to apply gradient
+              borderColor: checked ? "transparent" : Colors.light.checkBorder,
+              backgroundColor: checked ? "transparent" : "white", // Change this to apply gradient
             },
             !checked && {
               elevation: 20,
@@ -33,7 +33,8 @@ const CustomCheckbox: FC<CustomCheckboxProps> = ({ checked, onPress }) => {
               shadowOpacity: 0.3,
               shadowRadius: 15,
             },
-          ]}>
+          ]}
+        >
           {checked && (
             <LinearGradient
               colors={[Colors.light.gridPrimary, Colors.light.gridSecondary]}
@@ -43,9 +44,10 @@ const CustomCheckbox: FC<CustomCheckboxProps> = ({ checked, onPress }) => {
                 width: 20,
                 height: 20,
                 borderRadius: 15,
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}>
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
               <CustomIcon
                 type="FontAwesome"
                 name="check"

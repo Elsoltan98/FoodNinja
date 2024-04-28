@@ -2,9 +2,9 @@
 // @ts-check
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const eslint = require('@eslint/js');
+const eslint = require("@eslint/js");
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const tseslint = require('typescript-eslint');
+const tseslint = require("typescript-eslint");
 module.exports = tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.recommended,

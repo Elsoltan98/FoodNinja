@@ -1,9 +1,9 @@
-import * as React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import NavTypes from '@config/NavTypes';
-import Login from '../screens/Login';
-import Signup from '../screens/Signup';
-import SignupProcess from '../screens/SignUpProcess';
+import * as React from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import NavTypes from "@config/NavTypes";
+import Login from "../screens/Login";
+import Signup from "../screens/Signup";
+import SignupProcess from "../screens/SignUpProcess";
 const Stack = createNativeStackNavigator();
 const AuthNav = () => {
   return (

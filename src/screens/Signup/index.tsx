@@ -3,23 +3,23 @@ import {
   ImageBackground,
   StyleSheet,
   TouchableOpacity,
-} from 'react-native';
-import React, { useState } from 'react';
-import { fontScale, sHeight, sWidth, scale, vScale } from '@config/scale';
-import { SvgXml } from 'react-native-svg';
-import { Logo } from '@assets/Logo';
-import AppText from '@components/AppText';
-import Colors from '@config/colors';
-import CustomInput from '@components/CustomInput';
-import CustomIcon from '@components/Icon';
-import { Formik } from 'formik';
-import CustomBtn from '@components/CustomBtn';
-import { ProfileIcon } from '@assets/Profile';
-import { MessageIcon } from '@assets/Message';
-import { LockIcon } from '@assets/Lock';
-import { useNavigation } from '@react-navigation/native';
-import NavTypes from '@config/NavTypes';
-import CustomCheckbox from '@components/CustomCheckBox';
+} from "react-native";
+import React, { useState } from "react";
+import { fontScale, sHeight, sWidth, scale, vScale } from "@config/scale";
+import { SvgXml } from "react-native-svg";
+import { Logo } from "@assets/Logo";
+import AppText from "@components/AppText";
+import Colors from "@config/colors";
+import CustomInput from "@components/CustomInput";
+import CustomIcon from "@components/Icon";
+import { Formik } from "formik";
+import CustomBtn from "@components/CustomBtn";
+import { ProfileIcon } from "@assets/Profile";
+import { MessageIcon } from "@assets/Message";
+import { LockIcon } from "@assets/Lock";
+import { useNavigation } from "@react-navigation/native";
+import NavTypes from "@config/NavTypes";
+import CustomCheckbox from "@components/CustomCheckBox";
 
 const Signup = () => {
   const [show, setShow] = useState<boolean>(false);
@@ -31,8 +31,9 @@ const Signup = () => {
   return (
     <View style={{ flex: 1 }}>
       <ImageBackground
-        source={require('./../../assets/bg.png')}
-        style={styles.container}>
+        source={require("./../../assets/bg.png")}
+        style={styles.container}
+      >
         <View style={styles.imageContainer}>
           <SvgXml xml={Logo} width={sWidth * 0.4} height={sHeight * 0.3} />
           <AppText
@@ -43,15 +44,16 @@ const Signup = () => {
           />
         </View>
         <Formik
-          initialValues={{ userName: '', email: '', password: '' }}
-          onSubmit={values => console.log(values)}>
-          {props => (
+          initialValues={{ userName: "", email: "", password: "" }}
+          onSubmit={(values) => console.log(values)}
+        >
+          {(props) => (
             <View style={styles.formContainer}>
               <CustomInput
                 inputPlaceHolder="User Name"
                 value={props.values.userName}
-                onChangeText={props.handleChange('userName')}
-                onBlur={props.handleBlur('userName')}
+                onChangeText={props.handleChange("userName")}
+                onBlur={props.handleBlur("userName")}
                 withIcons
                 leftIcon={
                   <SvgXml
@@ -64,8 +66,8 @@ const Signup = () => {
               <CustomInput
                 inputPlaceHolder="Email"
                 value={props.values.email}
-                onChangeText={props.handleChange('email')}
-                onBlur={props.handleBlur('email')}
+                onChangeText={props.handleChange("email")}
+                onBlur={props.handleBlur("email")}
                 withIcons
                 leftIcon={
                   <SvgXml
@@ -80,8 +82,8 @@ const Signup = () => {
                 isPassword
                 show={!show}
                 value={props.values.password}
-                onChangeText={props.handleChange('password')}
-                onBlur={props.handleBlur('password')}
+                onChangeText={props.handleChange("password")}
+                onBlur={props.handleBlur("password")}
                 withIcons
                 rightIcon={
                   !show ? (
@@ -138,9 +140,13 @@ const Signup = () => {
           </View>
         </View>
         <View style={styles.footerContainer}>
-          <CustomBtn title="Create Account" onPress={() => navigation.navigate(NavTypes.SIGN_UP_PROCESS)} />
+          <CustomBtn
+            title="Create Account"
+            onPress={() => navigation.navigate(NavTypes.SIGN_UP_PROCESS)}
+          />
           <TouchableOpacity
-            onPress={() => navigation.navigate(NavTypes.LOG_IN)}>
+            onPress={() => navigation.navigate(NavTypes.LOG_IN)}
+          >
             <AppText
               text="already have an account?"
               style={styles.signupText}
@@ -159,31 +165,31 @@ const styles = StyleSheet.create({
     paddingHorizontal: scale(25),
   },
   imageContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   formContainer: {
     marginTop: vScale(50),
   },
   continueContainer: {
-    justifyContent: 'center',
+    justifyContent: "center",
     marginTop: vScale(10),
     marginBottom: vScale(10),
     marginLeft: scale(10),
   },
   checkContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     marginBottom: vScale(15),
   },
   footerContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginTop: vScale(10),
   },
   signupText: {
     marginTop: vScale(20),
-    textDecorationLine: 'underline',
+    textDecorationLine: "underline",
   },
 });
 

@@ -3,21 +3,21 @@ import {
   ImageBackground,
   StyleSheet,
   TouchableOpacity,
-} from 'react-native';
-import React, { useState } from 'react';
-import { fontScale, sHeight, sWidth, scale, vScale } from '@config/scale';
-import { SvgXml } from 'react-native-svg';
-import { Logo } from '@assets/Logo';
-import AppText from '@components/AppText';
-import Colors from '@config/colors';
-import CustomInput from '@components/CustomInput';
-import CustomIcon from '@components/Icon';
-import { Formik } from 'formik';
-import CustomBtn from '@components/CustomBtn';
-import { facebookLogo } from '@assets/facebookLogo';
-import { googleLogo } from '@assets/googleLogo';
-import { useNavigation } from '@react-navigation/native';
-import NavTypes from '@config/NavTypes';
+} from "react-native";
+import React, { useState } from "react";
+import { fontScale, sHeight, sWidth, scale, vScale } from "@config/scale";
+import { SvgXml } from "react-native-svg";
+import { Logo } from "@assets/Logo";
+import AppText from "@components/AppText";
+import Colors from "@config/colors";
+import CustomInput from "@components/CustomInput";
+import CustomIcon from "@components/Icon";
+import { Formik } from "formik";
+import CustomBtn from "@components/CustomBtn";
+import { facebookLogo } from "@assets/facebookLogo";
+import { googleLogo } from "@assets/googleLogo";
+import { useNavigation } from "@react-navigation/native";
+import NavTypes from "@config/NavTypes";
 
 const Login = () => {
   const [show, setShow] = useState<boolean>(false);
@@ -26,8 +26,9 @@ const Login = () => {
   return (
     <View style={{ flex: 1 }}>
       <ImageBackground
-        source={require('@assets/bg.png')}
-        style={styles.container}>
+        source={require("@assets/bg.png")}
+        style={styles.container}
+      >
         <View style={styles.imageContainer}>
           <SvgXml xml={Logo} width={sWidth * 0.4} height={sHeight * 0.3} />
           <AppText
@@ -38,15 +39,16 @@ const Login = () => {
           />
         </View>
         <Formik
-          initialValues={{ email: '', password: '' }}
-          onSubmit={values => console.log(values)}>
-          {props => (
+          initialValues={{ email: "", password: "" }}
+          onSubmit={(values) => console.log(values)}
+        >
+          {(props) => (
             <View style={styles.formContainer}>
               <CustomInput
                 inputPlaceHolder="Email"
                 value={props.values.email}
-                onChangeText={props.handleChange('email')}
-                onBlur={props.handleBlur('email')}
+                onChangeText={props.handleChange("email")}
+                onBlur={props.handleBlur("email")}
               />
               <CustomInput
                 withIcons
@@ -54,8 +56,8 @@ const Login = () => {
                 isPassword
                 show={!show}
                 value={props.values.password}
-                onChangeText={props.handleChange('password')}
-                onBlur={props.handleBlur('password')}
+                onChangeText={props.handleChange("password")}
+                onBlur={props.handleBlur("password")}
                 rightIcon={
                   !show ? (
                     <CustomIcon
@@ -107,7 +109,8 @@ const Login = () => {
         <View style={styles.footerContainer}>
           <CustomBtn title="Login" />
           <TouchableOpacity
-            onPress={() => navigation.navigate(NavTypes.SIGN_UP)}>
+            onPress={() => navigation.navigate(NavTypes.SIGN_UP)}
+          >
             <AppText
               text="Don’t have an account? Sign up"
               style={styles.signupText}
@@ -126,22 +129,22 @@ const styles = StyleSheet.create({
     paddingHorizontal: scale(25),
   },
   imageContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   formContainer: {
     marginTop: vScale(50),
   },
   continueContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginTop: vScale(10),
     marginBottom: vScale(20),
   },
   socialContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     marginVertical: vScale(20),
   },
   socialBtns: {
@@ -157,13 +160,13 @@ const styles = StyleSheet.create({
     shadowRadius: 15,
   },
   footerContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginTop: vScale(10),
   },
   signupText: {
     marginTop: vScale(20),
-    textDecorationLine: 'underline',
+    textDecorationLine: "underline",
   },
 });
 

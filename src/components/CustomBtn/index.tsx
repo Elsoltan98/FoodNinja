@@ -3,12 +3,12 @@ import {
   TouchableOpacity,
   GestureResponderEvent,
   ViewStyle,
-} from 'react-native';
-import React, { FC, ReactNode } from 'react';
-import LinearGradient from 'react-native-linear-gradient';
-import Colors from '@config/colors';
-import { fontScale, scale, vScale } from '@config/scale';
-import AppText from '../AppText';
+} from "react-native";
+import React, { FC, ReactNode } from "react";
+import LinearGradient from "react-native-linear-gradient";
+import Colors from "@config/colors";
+import { fontScale, scale, vScale } from "@config/scale";
+import AppText from "../AppText";
 
 interface CustomBtnProps {
   title: string;
@@ -30,7 +30,8 @@ const CustomBtn: FC<CustomBtnProps> = ({
   return (
     <TouchableOpacity
       style={[icon ? styles.linearGradient : null, style]}
-      onPress={onPress}>
+      onPress={onPress}
+    >
       <LinearGradient
         style={[icon ? styles.iconContainer : styles.linearGradient]}
         colors={
@@ -39,7 +40,8 @@ const CustomBtn: FC<CustomBtnProps> = ({
             : [Colors.light.gridPrimary, Colors.light.gridSecondary]
         }
         start={{ x: 0, y: 1 }}
-        end={{ x: 1, y: 0 }}>
+        end={{ x: 1, y: 0 }}
+      >
         {icon && icon}
         <AppText
           text={title}
@@ -60,15 +62,15 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 18,
-    fontFamily: 'Gill Sans',
-    textAlign: 'center',
-    color: '#ffffff',
-    backgroundColor: 'transparent',
+    fontFamily: "Gill Sans",
+    textAlign: "center",
+    color: "#ffffff",
+    backgroundColor: "transparent",
   },
   iconContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center",
   },
 });
 

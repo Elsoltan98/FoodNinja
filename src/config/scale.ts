@@ -1,7 +1,7 @@
-import { Dimensions, Platform, StatusBar } from 'react-native';
+import { Dimensions, Platform, StatusBar } from "react-native";
 
-const isAndroid = Platform.OS === 'android';
-const { width: screenWidth, height: screenHeight } = Dimensions.get('screen');
+const isAndroid = Platform.OS === "android";
+const { width: screenWidth, height: screenHeight } = Dimensions.get("screen");
 
 const is_X_Ratio =
   (screenWidth / screenHeight).toFixed(2) == (428 / 926).toFixed(2) &&

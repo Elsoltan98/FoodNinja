@@ -1,14 +1,14 @@
-import { View, StyleSheet } from 'react-native';
-import React, { useState } from 'react';
-import { SvgXml } from 'react-native-svg';
-import { Intro1 } from '@assets/intro1';
-import { fontScale, sHeight, sWidth, vScale } from '@config/scale';
-import Colors from '@config/colors';
-import AppText from '@components/AppText';
-import CustomBtn from '@components/CustomBtn';
-import { Intro2 } from '@assets/intro2';
-import { useNavigation } from '@react-navigation/native';
-import NavTypes from '@config/NavTypes';
+import { View, StyleSheet } from "react-native";
+import React, { useState } from "react";
+import { SvgXml } from "react-native-svg";
+import { Intro1 } from "@assets/intro1";
+import { fontScale, sHeight, sWidth, vScale } from "@config/scale";
+import Colors from "@config/colors";
+import AppText from "@components/AppText";
+import CustomBtn from "@components/CustomBtn";
+import { Intro2 } from "@assets/intro2";
+import { useNavigation } from "@react-navigation/native";
+import NavTypes from "@config/NavTypes";
 
 const Intro = () => {
   const [nextIntro, setNextIntro] = useState<number>(0);
@@ -25,11 +25,11 @@ const Intro = () => {
               color={Colors.light.textPrimary}
               fontWeight="bold"
               size={fontScale(22)}
-              style={{ textAlign: 'center' }}
+              style={{ textAlign: "center" }}
             />
             <AppText
               text={`Here You Can find a chef or dish for every \n taste and color. Enjoy!`}
-              style={{ textAlign: 'center', marginTop: vScale(30) }}
+              style={{ textAlign: "center", marginTop: vScale(30) }}
               color={Colors.light.black}
               size={fontScale(12)}
             />
@@ -45,11 +45,11 @@ const Intro = () => {
               color={Colors.light.textPrimary}
               fontWeight="bold"
               size={fontScale(22)}
-              style={{ textAlign: 'center' }}
+              style={{ textAlign: "center" }}
             />
             <AppText
               text={`Enjoy a fast and smooth food delivery at \nyour doorstep`}
-              style={{ textAlign: 'center', marginTop: vScale(30) }}
+              style={{ textAlign: "center", marginTop: vScale(30) }}
               color={Colors.light.black}
               size={fontScale(12)}
             />
@@ -68,8 +68,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.light.white,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   findTextContainer: {
     marginTop: vScale(20),

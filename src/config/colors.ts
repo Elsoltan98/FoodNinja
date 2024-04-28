@@ -8,11 +8,13 @@ export type ColorTheme = {
   lightGray: string;
   shadow: string;
   checkBorder: string;
+  orange: string;
+  lightOrange: string;
 };
 
 const sharedColors = {
-  black: '#000000',
-  white: '#FFFFFF',
+  black: "#000000",
+  white: "#FFFFFF",
 };
 
 type SharedColors = typeof sharedColors;
@@ -26,27 +28,31 @@ type ColorPalettes = {
 
 const Colors: ColorPalettes = {
   dark: {
-    primary: '#080811',
-    secondary: '#161629',
+    primary: "#080811",
+    secondary: "#161629",
     textPrimary: sharedColors.white,
-    textSecondary: '#67686E',
-    gridPrimary: '#0',
-    gridSecondary: '#0',
-    lightGray: '#0',
-    shadow: '0',
-    checkBorder: '0',
+    textSecondary: "#67686E",
+    gridPrimary: "#0",
+    gridSecondary: "#0",
+    lightGray: "#0",
+    shadow: "0",
+    checkBorder: "0",
+    orange: "0",
+    lightOrange: "0",
     ...sharedColors,
   },
   light: {
-    primary: '#F8F8F8',
-    secondary: '#E4E4E4',
-    textPrimary: '#09051C',
-    textSecondary: '#9D5DB0',
-    gridPrimary: '#53E88B',
-    gridSecondary: '#15BE77',
-    lightGray: '#F4F4F4',
-    shadow: '#5A6CEA',
-    checkBorder: '#eceff1',
+    primary: "#F8F8F8",
+    secondary: "#E4E4E4",
+    textPrimary: "#09051C",
+    textSecondary: "#9D5DB0",
+    gridPrimary: "#53E88B",
+    gridSecondary: "#15BE77",
+    lightGray: "#F4F4F4",
+    shadow: "#5A6CEA",
+    checkBorder: "#eceff1",
+    orange: "#DA6317",
+    lightOrange: "rgba(255, 180, 96, 0.8)",
     ...sharedColors,
   },
 };

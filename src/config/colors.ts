@@ -10,6 +10,7 @@ export type ColorTheme = {
   checkBorder: string;
   orange: string;
   lightOrange: string;
+  transWhite: string;
 };
 
 const sharedColors = {
@@ -39,6 +40,7 @@ const Colors: ColorPalettes = {
     checkBorder: "0",
     orange: "0",
     lightOrange: "0",
+    transWhite: "0",
     ...sharedColors,
   },
   light: {
@@ -53,6 +55,7 @@ const Colors: ColorPalettes = {
     checkBorder: "#eceff1",
     orange: "#DA6317",
     lightOrange: "rgba(255, 180, 96, 0.8)",
+    transWhite: "rgba(255, 255, 255, 0.5)",
     ...sharedColors,
   },
 };

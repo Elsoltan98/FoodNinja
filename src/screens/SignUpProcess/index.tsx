@@ -4,25 +4,104 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import CustomIcon from "@components/Icon";
 import Colors from "@config/colors";
+import { fontScale, sHeight, sWidth, scale, vScale } from "@config/scale";
+import AppText from "@components/AppText";
+import CustomInput from "@components/CustomInput";
+import CustomBtn from "@components/CustomBtn";
+import { SvgXml } from "react-native-svg";
+import { Paypal } from "@assets/paypal";
+import { VisaIcon } from "@assets/visa ";
+import { Payoneer } from "@assets/Payoneer";
 
 const SignupProcess = () => {
+  const [processNum, setProcessNum] = useState<number>(0);
+
+  //console.log(processNum);
+
+  const nextProcess = () => {
+    setProcessNum(processNum + 1);
+  };
+
   return (
     <View style={styles.container}>
       <ImageBackground
         source={require("./../../assets/bg.png")}
         style={styles.container}
       >
-        <TouchableOpacity style={styles.backContainer}>
-          <CustomIcon
-            type="Entypo"
-            name="chevron-left"
-            size={20}
-            color={Colors.light.orange}
-          />
-        </TouchableOpacity>
+        {processNum === 0 ? (
+          <View style={styles.overlayContainer}>
+            <TouchableOpacity style={styles.backContainer}>
+              <CustomIcon
+                type="Entypo"
+                name="chevron-left"
+                size={fontScale(20)}
+                color={Colors.light.orange}
+              />
+            </TouchableOpacity>
+            <View>
+              <AppText
+                text="Fill in your bio to get started"
+                fontWeight="bold"
+                size={fontScale(30)}
+                style={{ marginBottom: vScale(20) }}
+              />
+              <AppText
+                text={`This data will be displayed in your account \nprofile for security`}
+                style={{ marginBottom: vScale(40) }}
+              />
+              <CustomInput inputPlaceHolder="First Name" />
+              <CustomInput inputPlaceHolder="Last Name" />
+              <CustomInput inputPlaceHolder="Mobile Number" />
+            </View>
+          </View>
+        ) : (
+          <View style={styles.overlayContainer}>
+            <TouchableOpacity style={styles.backContainer}>
+              <CustomIcon
+                type="Entypo"
+                name="chevron-left"
+                size={fontScale(20)}
+                color={Colors.light.orange}
+              />
+            </TouchableOpacity>
+            <View>
+              <AppText
+                text="Payment Method"
+                fontWeight="bold"
+                size={fontScale(30)}
+                style={{ marginBottom: vScale(20) }}
+              />
+              <AppText
+                text={`This data will be displayed in your account \nprofile for security`}
+                style={{ marginBottom: vScale(40) }}
+              />
+              <CustomBtn
+                style={styles.paymentBtns}
+                colors={[Colors.light.white, Colors.light.white]}
+                title=""
+                icon={<SvgXml xml={Paypal} />}
+              />
+              <CustomBtn
+                style={styles.paymentBtns}
+                colors={[Colors.light.white, Colors.light.white]}
+                title=""
+                icon={<SvgXml xml={VisaIcon} />}
+              />
+              <CustomBtn
+                style={styles.paymentBtns}
+                colors={[Colors.light.white, Colors.light.white]}
+                title=""
+                icon={<SvgXml xml={Payoneer} />}
+              />
+            </View>
+          </View>
+        )}
+        <View style={styles.nextContainer}>
+          <CustomBtn title="Next" onPress={nextProcess} />
+        </View>
       </ImageBackground>
     </View>
   );
@@ -34,10 +113,41 @@ const styles = StyleSheet.create({
   },
   backContainer: {
     backgroundColor: Colors.light.lightOrange,
-    width: 45,
-    height: 45,
+    width: sWidth * 0.13,
+    height: sHeight * 0.06,
     padding: 10,
     borderRadius: 15,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: vScale(25),
+  },
+  overlayContainer: {
+    backgroundColor: Colors.light.transWhite,
+    flex: 1,
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    paddingHorizontal: scale(25),
+    paddingVertical: vScale(15),
+  },
+  nextContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    top: vScale(-40),
+  },
+  paymentBtns: {
+    paddingHorizontal: scale(0),
+    height: sHeight * 0.085,
+    marginBottom: vScale(20),
+    backgroundColor: Colors.light.white,
+    borderWidth: scale(1),
+    borderColor: Colors.light.lightGray,
+    elevation: 20,
+    shadowColor: Colors.light.shadow,
+    shadowOffset: { width: 2, height: 5 },
+    shadowOpacity: 0.1,
+    shadowRadius: 15,
     justifyContent: "center",
     alignItems: "center",
   },

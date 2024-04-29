@@ -6,8 +6,12 @@ import AppText from "@components/AppText";
 import Colors from "@config/colors";
 import { fontScale, vScale } from "@config/scale";
 import CustomBtn from "@components/CustomBtn";
+import { useNavigation } from "@react-navigation/native";
+import NavTypes from "@config/NavTypes";
 
 const SignUpSuccess = () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const navigation: any = useNavigation();
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -31,7 +35,11 @@ const SignUpSuccess = () => {
           />
         </View>
 
-        <CustomBtn title="Try Order" style={styles.tryBtn} />
+        <CustomBtn
+          title="Try Order"
+          style={styles.tryBtn}
+          onPress={() => navigation.navigate(NavTypes.BOTTOM_TAB_NAV)}
+        />
       </ImageBackground>
     </View>
   );

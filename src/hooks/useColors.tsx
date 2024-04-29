@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { ThemeContext } from "./../utils/ThemeContext";
 
 interface ColorType {
-  colors: TColors;
+  AppColors: TColors;
   applyColors: (colors: TColors) => void;
 }
 
@@ -15,7 +15,7 @@ const useColors = (): ColorType => {
 
   return {
     applyColors: store.applyColors,
-    colors: store.colors,
+    AppColors: store.colors,
   };
 };
 

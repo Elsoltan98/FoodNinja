@@ -10,12 +10,12 @@ import { useColorScheme } from "react-native";
 import Colors from "@config/colors";
 const Stack = createNativeStackNavigator();
 const AppNav = () => {
-  const { colors, applyColors } = useColors();
+  const { AppColors, applyColors } = useColors();
   const colorScheme = useColorScheme();
 
   React.useEffect(() => {
     applyColors(colorScheme === "dark" ? Colors.dark : Colors.light);
-  }, [applyColors, colors]);
+  }, [applyColors, AppColors]);
 
   return (
     <NavigationContainer>

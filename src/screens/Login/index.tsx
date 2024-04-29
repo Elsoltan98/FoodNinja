@@ -24,7 +24,7 @@ const Login = () => {
   const [show, setShow] = useState<boolean>(false);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const navigation: any = useNavigation();
-  const { colors } = useColors();
+  const { AppColors } = useColors();
   return (
     <View style={{ flex: 1 }}>
       <ImageBackground
@@ -36,7 +36,7 @@ const Login = () => {
           <AppText
             text="Login To Your Account"
             size={fontScale(20)}
-            color={colors.textPrimary}
+            color={AppColors.textPrimary}
             fontWeight="bold"
           />
         </View>
@@ -65,7 +65,7 @@ const Login = () => {
                     <CustomIcon
                       type="FontAwesome6"
                       name="eye"
-                      color={colors.gridPrimary}
+                      color={AppColors.gridPrimary}
                       size={fontScale(20)}
                       onPress={() => setShow(!show)}
                     />
@@ -73,7 +73,7 @@ const Login = () => {
                     <CustomIcon
                       type="FontAwesome6"
                       name="eye-slash"
-                      color={colors.gridPrimary}
+                      color={AppColors.gridPrimary}
                       size={fontScale(20)}
                       onPress={() => setShow(!show)}
                     />
@@ -90,22 +90,22 @@ const Login = () => {
               title="Facebook"
               icon={<SvgXml xml={facebookLogo} />}
               style={[styles.socialBtns, { marginRight: scale(20) }]}
-              colors={[colors.white, colors.white]}
-              textColor={colors.textPrimary}
+              colors={[AppColors.white, AppColors.white]}
+              textColor={AppColors.textPrimary}
             />
             <CustomBtn
               title="Google"
               icon={<SvgXml xml={googleLogo} />}
               style={styles.socialBtns}
-              colors={[colors.white, colors.white]}
-              textColor={colors.textPrimary}
+              colors={[AppColors.white, AppColors.white]}
+              textColor={AppColors.textPrimary}
             />
           </View>
           <AppText
             text="Forgot Your Password?"
             fontWeight="bold"
             style={styles.signupText}
-            color={colors.gridSecondary}
+            color={AppColors.gridSecondary}
           />
         </View>
         <View style={styles.footerContainer}>
@@ -119,7 +119,7 @@ const Login = () => {
             <AppText
               text="Don’t have an account? Sign up"
               style={styles.signupText}
-              color={colors.gridSecondary}
+              color={AppColors.gridSecondary}
             />
           </TouchableOpacity>
         </View>

@@ -5,8 +5,18 @@ import Intro from "../screens/intro";
 import NavTypes from "@config/NavTypes";
 import AuthNav from "./authNav";
 import BottomTabsNav from "./bottomTabsNav";
+import useColors from "../hooks/useColors";
+import { useColorScheme } from "react-native";
+import Colors from "@config/colors";
 const Stack = createNativeStackNavigator();
 const AppNav = () => {
+  const { colors, applyColors } = useColors();
+  const colorScheme = useColorScheme();
+
+  React.useEffect(() => {
+    applyColors(colorScheme === "dark" ? Colors.dark : Colors.light);
+  }, [applyColors, colors]);
+
   return (
     <NavigationContainer>
       <Stack.Navigator>

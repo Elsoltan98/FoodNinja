@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import Colors from "./src/config/colors";
 import SplashScreen from "react-native-splash-screen";
 import AppNav from "./src/navigation";
+import { ThemeProvider } from "./src/utils/ThemeContext";
 
 const App = () => {
   useEffect(() => {
@@ -17,7 +18,9 @@ const App = () => {
   }, []);
   return (
     <SafeAreaView style={styles.container}>
-      <AppNav />
+      <ThemeProvider>
+        <AppNav />
+      </ThemeProvider>
     </SafeAreaView>
   );
 };

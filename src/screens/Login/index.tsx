@@ -18,11 +18,13 @@ import { facebookLogo } from "@assets/facebookLogo";
 import { googleLogo } from "@assets/googleLogo";
 import { useNavigation } from "@react-navigation/native";
 import NavTypes from "@config/NavTypes";
+import useColors from "../../hooks/useColors";
 
 const Login = () => {
   const [show, setShow] = useState<boolean>(false);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const navigation: any = useNavigation();
+  const { colors } = useColors();
   return (
     <View style={{ flex: 1 }}>
       <ImageBackground
@@ -34,7 +36,7 @@ const Login = () => {
           <AppText
             text="Login To Your Account"
             size={fontScale(20)}
-            color={Colors.light.textPrimary}
+            color={colors.textPrimary}
             fontWeight="bold"
           />
         </View>
@@ -63,7 +65,7 @@ const Login = () => {
                     <CustomIcon
                       type="FontAwesome6"
                       name="eye"
-                      color={Colors.light.gridPrimary}
+                      color={colors.gridPrimary}
                       size={fontScale(20)}
                       onPress={() => setShow(!show)}
                     />
@@ -71,7 +73,7 @@ const Login = () => {
                     <CustomIcon
                       type="FontAwesome6"
                       name="eye-slash"
-                      color={Colors.light.gridPrimary}
+                      color={colors.gridPrimary}
                       size={fontScale(20)}
                       onPress={() => setShow(!show)}
                     />
@@ -88,22 +90,22 @@ const Login = () => {
               title="Facebook"
               icon={<SvgXml xml={facebookLogo} />}
               style={[styles.socialBtns, { marginRight: scale(20) }]}
-              colors={[Colors.light.white, Colors.light.white]}
-              textColor={Colors.light.textPrimary}
+              colors={[colors.white, colors.white]}
+              textColor={colors.textPrimary}
             />
             <CustomBtn
               title="Google"
               icon={<SvgXml xml={googleLogo} />}
               style={styles.socialBtns}
-              colors={[Colors.light.white, Colors.light.white]}
-              textColor={Colors.light.textPrimary}
+              colors={[colors.white, colors.white]}
+              textColor={colors.textPrimary}
             />
           </View>
           <AppText
             text="Forgot Your Password?"
             fontWeight="bold"
             style={styles.signupText}
-            color={Colors.light.gridSecondary}
+            color={colors.gridSecondary}
           />
         </View>
         <View style={styles.footerContainer}>
@@ -117,7 +119,7 @@ const Login = () => {
             <AppText
               text="Don’t have an account? Sign up"
               style={styles.signupText}
-              color={Colors.light.gridSecondary}
+              color={colors.gridSecondary}
             />
           </TouchableOpacity>
         </View>

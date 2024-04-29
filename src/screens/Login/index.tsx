@@ -107,7 +107,10 @@ const Login = () => {
           />
         </View>
         <View style={styles.footerContainer}>
-          <CustomBtn title="Login" />
+          <CustomBtn
+            title="Login"
+            onPress={() => navigation.navigate(NavTypes.BOTTOM_TAB_NAV)}
+          />
           <TouchableOpacity
             onPress={() => navigation.navigate(NavTypes.SIGN_UP)}
           >

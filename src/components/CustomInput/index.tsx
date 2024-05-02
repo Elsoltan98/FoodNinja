@@ -8,6 +8,8 @@ import {
 import React, { FC, ReactElement } from "react";
 import { fontScale, sHeight, sWidth, scale, vScale } from "@config/scale";
 import Colors from "@config/colors";
+import AppText from "@components/AppText";
+import useColors from "../../hooks/useColors";
 
 interface CustomInputProps {
   withIcons?: boolean;
@@ -21,8 +23,8 @@ interface CustomInputProps {
     | undefined;
   isPassword?: boolean;
   show?: boolean;
-  touched?: { [fieldName: string]: boolean };
-  errors?: { [fieldName: string]: string };
+  errors?: string;
+  touched?: boolean;
 }
 
 const CustomInput: FC<CustomInputProps> = ({
@@ -35,7 +37,10 @@ const CustomInput: FC<CustomInputProps> = ({
   onBlur,
   isPassword,
   show,
+  errors,
+  touched,
 }) => {
+  const { AppColors } = useColors();
   return (
     <View>
       {withIcons ? (
@@ -70,6 +75,14 @@ const CustomInput: FC<CustomInputProps> = ({
           onChangeText={onChangeText}
           onBlur={onBlur}
           secureTextEntry={isPassword ? show : false}
+        />
+      )}
+      {errors && touched && (
+        <AppText
+          style={styles.errorText}
+          color={AppColors.danger}
+          text={errors}
+          fontWeight="medium"
         />
       )}
     </View>
@@ -108,6 +121,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+  },
+  errorText: {
+    marginTop: vScale(-10),
+    marginBottom: vScale(15),
+    marginLeft: scale(10),
+    fontSize: fontScale(16),
   },
 });
 

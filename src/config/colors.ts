@@ -12,6 +12,7 @@ export type ColorTheme = {
   lightOrange: string;
   transWhite: string;
   lightGray2: string;
+  danger: string;
 };
 
 const sharedColors = {
@@ -43,6 +44,7 @@ const Colors: ColorPalettes = {
     lightOrange: "0",
     transWhite: "0",
     lightGray2: "0",
+    danger: "#D41C33",
     ...sharedColors,
   },
   light: {
@@ -59,6 +61,7 @@ const Colors: ColorPalettes = {
     orange: "#DA6317",
     lightOrange: "rgba(255, 180, 96, 0.8)",
     transWhite: "rgba(255, 255, 255, 0.5)",
+    danger: "#D41C33",
     ...sharedColors,
   },
 };

@@ -20,6 +20,13 @@ import { LockIcon } from "@assets/Lock";
 import { useNavigation } from "@react-navigation/native";
 import NavTypes from "@config/NavTypes";
 import CustomCheckbox from "@components/CustomCheckBox";
+import { object, string } from "yup";
+
+const signUpSchema = object({
+  userName: string().required(),
+  email: string().email(),
+  password: string().min(6).required(),
+});
 
 const Signup = () => {
   const [show, setShow] = useState<boolean>(false);
@@ -46,6 +53,7 @@ const Signup = () => {
         <Formik
           initialValues={{ userName: "", email: "", password: "" }}
           onSubmit={(values) => console.log(values)}
+          validationSchema={signUpSchema}
         >
           {(props) => (
             <View style={styles.formContainer}>
@@ -55,6 +63,8 @@ const Signup = () => {
                 onChangeText={props.handleChange("userName")}
                 onBlur={props.handleBlur("userName")}
                 withIcons
+                touched={props.touched.userName}
+                errors={props.errors.userName}
                 leftIcon={
                   <SvgXml
                     xml={ProfileIcon}
@@ -69,6 +79,8 @@ const Signup = () => {
                 onChangeText={props.handleChange("email")}
                 onBlur={props.handleBlur("email")}
                 withIcons
+                touched={props.touched.email}
+                errors={props.errors.email}
                 leftIcon={
                   <SvgXml
                     xml={MessageIcon}
@@ -85,6 +97,8 @@ const Signup = () => {
                 onChangeText={props.handleChange("password")}
                 onBlur={props.handleBlur("password")}
                 withIcons
+                touched={props.touched.password}
+                errors={props.errors.password}
                 rightIcon={
                   !show ? (
                     <CustomIcon

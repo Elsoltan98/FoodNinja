@@ -24,7 +24,7 @@ import { object, string } from "yup";
 
 const signUpSchema = object({
   userName: string().required(),
-  email: string().email(),
+  email: string().email().required(),
   password: string().min(6).required(),
 });
 
@@ -52,7 +52,7 @@ const Signup = () => {
         </View>
         <Formik
           initialValues={{ userName: "", email: "", password: "" }}
-          onSubmit={(values) => console.log(values)}
+          onSubmit={() => navigation.navigate(NavTypes.SIGN_UP_PROCESS)}
           validationSchema={signUpSchema}
         >
           {(props) => (
@@ -126,48 +126,45 @@ const Signup = () => {
                   />
                 }
               />
+              <View style={styles.continueContainer}>
+                <View style={styles.checkContainer}>
+                  <CustomCheckbox
+                    checked={checked}
+                    onPress={() => setChecked(!checked)}
+                  />
+                  <AppText
+                    text="Keep Me Signed In"
+                    color={Colors.light.textPrimary}
+                    size={fontScale(14)}
+                  />
+                </View>
+                <View style={styles.checkContainer}>
+                  <CustomCheckbox
+                    checked={checkedEmail}
+                    onPress={() => setCheckedEmail(!checkedEmail)}
+                  />
+                  <AppText
+                    text="Email Me About Special Pricing"
+                    color={Colors.light.textPrimary}
+                    size={fontScale(14)}
+                  />
+                </View>
+              </View>
+              <View style={styles.footerContainer}>
+                <CustomBtn title="Create Account" onPress={props.submitForm} />
+                <TouchableOpacity
+                  onPress={() => navigation.navigate(NavTypes.LOG_IN)}
+                >
+                  <AppText
+                    text="already have an account?"
+                    style={styles.signupText}
+                    color={Colors.light.gridSecondary}
+                  />
+                </TouchableOpacity>
+              </View>
             </View>
           )}
         </Formik>
-        <View style={styles.continueContainer}>
-          <View style={styles.checkContainer}>
-            <CustomCheckbox
-              checked={checked}
-              onPress={() => setChecked(!checked)}
-            />
-            <AppText
-              text="Keep Me Signed In"
-              color={Colors.light.textPrimary}
-              size={fontScale(14)}
-            />
-          </View>
-          <View style={styles.checkContainer}>
-            <CustomCheckbox
-              checked={checkedEmail}
-              onPress={() => setCheckedEmail(!checkedEmail)}
-            />
-            <AppText
-              text="Email Me About Special Pricing"
-              color={Colors.light.textPrimary}
-              size={fontScale(14)}
-            />
-          </View>
-        </View>
-        <View style={styles.footerContainer}>
-          <CustomBtn
-            title="Create Account"
-            onPress={() => navigation.navigate(NavTypes.SIGN_UP_PROCESS)}
-          />
-          <TouchableOpacity
-            onPress={() => navigation.navigate(NavTypes.LOG_IN)}
-          >
-            <AppText
-              text="already have an account?"
-              style={styles.signupText}
-              color={Colors.light.gridSecondary}
-            />
-          </TouchableOpacity>
-        </View>
       </ImageBackground>
     </View>
   );

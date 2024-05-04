@@ -17,8 +17,14 @@ import CustomBtn from "@components/CustomBtn";
 import { facebookLogo } from "@assets/facebookLogo";
 import { googleLogo } from "@assets/googleLogo";
 import { useNavigation } from "@react-navigation/native";
-import NavTypes from "@config/NavTypes";
+import { NavTypes } from "@config/NavTypes";
 import useColors from "../../hooks/useColors";
+import { object, string } from "yup";
+
+const loginSchema = object({
+  email: string().email().required(),
+  password: string().min(6).required(),
+});
 
 const Login = () => {
   const [show, setShow] = useState<boolean>(false);
@@ -43,6 +49,7 @@ const Login = () => {
         <Formik
           initialValues={{ email: "", password: "" }}
           onSubmit={(values) => console.log(values)}
+          validationSchema={loginSchema}
         >
           {(props) => (
             <View style={styles.formContainer}>
@@ -51,6 +58,8 @@ const Login = () => {
                 value={props.values.email}
                 onChangeText={props.handleChange("email")}
                 onBlur={props.handleBlur("email")}
+                touched={props.touched.email}
+                errors={props.errors.email}
               />
               <CustomInput
                 withIcons
@@ -60,6 +69,8 @@ const Login = () => {
                 value={props.values.password}
                 onChangeText={props.handleChange("password")}
                 onBlur={props.handleBlur("password")}
+                touched={props.touched.password}
+                errors={props.errors.password}
                 rightIcon={
                   !show ? (
                     <CustomIcon
@@ -80,49 +91,46 @@ const Login = () => {
                   )
                 }
               />
+              <View style={styles.continueContainer}>
+                <AppText text="Or Continue With" fontWeight="bold" />
+                <View style={styles.socialContainer}>
+                  <CustomBtn
+                    title="Facebook"
+                    icon={<SvgXml xml={facebookLogo} />}
+                    style={[styles.socialBtns, { marginRight: scale(20) }]}
+                    colors={[AppColors.white, AppColors.white]}
+                    textColor={AppColors.textPrimary}
+                  />
+                  <CustomBtn
+                    title="Google"
+                    icon={<SvgXml xml={googleLogo} />}
+                    style={styles.socialBtns}
+                    colors={[AppColors.white, AppColors.white]}
+                    textColor={AppColors.textPrimary}
+                  />
+                </View>
+                <AppText
+                  text="Forgot Your Password?"
+                  fontWeight="bold"
+                  style={styles.signupText}
+                  color={AppColors.gridSecondary}
+                />
+              </View>
+              <View style={styles.footerContainer}>
+                <CustomBtn title="Login" onPress={props.submitForm} />
+                <TouchableOpacity
+                  onPress={() => navigation.navigate(NavTypes.SIGN_UP)}
+                >
+                  <AppText
+                    text="Don’t have an account? Sign up"
+                    style={styles.signupText}
+                    color={AppColors.gridSecondary}
+                  />
+                </TouchableOpacity>
+              </View>
             </View>
           )}
         </Formik>
-        <View style={styles.continueContainer}>
-          <AppText text="Or Continue With" fontWeight="bold" />
-          <View style={styles.socialContainer}>
-            <CustomBtn
-              title="Facebook"
-              icon={<SvgXml xml={facebookLogo} />}
-              style={[styles.socialBtns, { marginRight: scale(20) }]}
-              colors={[AppColors.white, AppColors.white]}
-              textColor={AppColors.textPrimary}
-            />
-            <CustomBtn
-              title="Google"
-              icon={<SvgXml xml={googleLogo} />}
-              style={styles.socialBtns}
-              colors={[AppColors.white, AppColors.white]}
-              textColor={AppColors.textPrimary}
-            />
-          </View>
-          <AppText
-            text="Forgot Your Password?"
-            fontWeight="bold"
-            style={styles.signupText}
-            color={AppColors.gridSecondary}
-          />
-        </View>
-        <View style={styles.footerContainer}>
-          <CustomBtn
-            title="Login"
-            onPress={() => navigation.navigate(NavTypes.BOTTOM_TAB_NAV)}
-          />
-          <TouchableOpacity
-            onPress={() => navigation.navigate(NavTypes.SIGN_UP)}
-          >
-            <AppText
-              text="Don’t have an account? Sign up"
-              style={styles.signupText}
-              color={AppColors.gridSecondary}
-            />
-          </TouchableOpacity>
-        </View>
       </ImageBackground>
     </View>
   );

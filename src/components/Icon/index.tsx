@@ -63,7 +63,12 @@ const CustomIcon: FC<CustomIconProps> = ({ type, ...props }) => {
   return props.button ? (
     <FontIcon.Button type={type} disabled={props.disabled} {...props} />
   ) : (
-    <FontIcon type={type} disabled={props.disabled} {...props} />
+    <FontIcon
+      type={type}
+      onPress={props.onPress}
+      disabled={props.disabled}
+      {...props}
+    />
   );
 };
 

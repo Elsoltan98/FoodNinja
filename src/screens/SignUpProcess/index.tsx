@@ -40,7 +40,10 @@ const SignupProcess = () => {
       >
         {processNum === 0 ? (
           <View style={styles.overlayContainer}>
-            <TouchableOpacity style={styles.backContainer}>
+            <TouchableOpacity
+              onPress={() => navigation.goBack()}
+              style={styles.backContainer}
+            >
               <CustomIcon
                 type="Entypo"
                 name="chevron-left"
@@ -66,7 +69,10 @@ const SignupProcess = () => {
           </View>
         ) : processNum === 1 ? (
           <View style={styles.overlayContainer}>
-            <TouchableOpacity style={styles.backContainer}>
+            <TouchableOpacity
+              onPress={() => setProcessNum(processNum - 1)}
+              style={styles.backContainer}
+            >
               <CustomIcon
                 type="Entypo"
                 name="chevron-left"
@@ -107,7 +113,10 @@ const SignupProcess = () => {
           </View>
         ) : processNum === 2 ? (
           <View style={styles.overlayContainer}>
-            <TouchableOpacity style={styles.backContainer}>
+            <TouchableOpacity
+              onPress={() => setProcessNum(processNum - 1)}
+              style={styles.backContainer}
+            >
               <CustomIcon
                 type="Entypo"
                 name="chevron-left"
@@ -142,7 +151,10 @@ const SignupProcess = () => {
           </View>
         ) : (
           <View style={styles.overlayContainer}>
-            <TouchableOpacity style={styles.backContainer}>
+            <TouchableOpacity
+              onPress={() => setProcessNum(processNum - 1)}
+              style={styles.backContainer}
+            >
               <CustomIcon
                 type="Entypo"
                 name="chevron-left"

@@ -18,7 +18,7 @@ import { ProfileIcon } from "@assets/Profile";
 import { MessageIcon } from "@assets/Message";
 import { LockIcon } from "@assets/Lock";
 import { useNavigation } from "@react-navigation/native";
-import NavTypes from "@config/NavTypes";
+import { NavTypes } from "@config/NavTypes";
 import CustomCheckbox from "@components/CustomCheckBox";
 import { object, string } from "yup";
 

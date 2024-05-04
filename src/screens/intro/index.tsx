@@ -8,7 +8,7 @@ import AppText from "@components/AppText";
 import CustomBtn from "@components/CustomBtn";
 import { Intro2 } from "@assets/intro2";
 import { useNavigation } from "@react-navigation/native";
-import NavTypes from "@config/NavTypes";
+import { NavTypes } from "@config/NavTypes";
 
 const Intro = () => {
   const [nextIntro, setNextIntro] = useState<number>(0);

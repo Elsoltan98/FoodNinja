@@ -2,13 +2,20 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Intro from "../screens/intro";
-import NavTypes from "@config/NavTypes";
+import { NavTypes } from "@config/NavTypes";
 import AuthNav from "./authNav";
 import BottomTabsNav from "./bottomTabsNav";
 import useColors from "../hooks/useColors";
 import { useColorScheme } from "react-native";
 import Colors from "@config/colors";
-const Stack = createNativeStackNavigator();
+
+export type AppStackParams = {
+  INTRO: undefined;
+  AUTH_NAV: undefined;
+  BOTTOM_TAB_NAV: undefined;
+};
+
+const Stack = createNativeStackNavigator<AppStackParams>();
 const AppNav = () => {
   const { AppColors, applyColors } = useColors();
   const colorScheme = useColorScheme();

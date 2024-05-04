@@ -7,7 +7,7 @@ import Colors from "@config/colors";
 import { fontScale, vScale } from "@config/scale";
 import CustomBtn from "@components/CustomBtn";
 import { useNavigation } from "@react-navigation/native";
-import NavTypes from "@config/NavTypes";
+import { NavTypes } from "@config/NavTypes";
 
 const SignUpSuccess = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

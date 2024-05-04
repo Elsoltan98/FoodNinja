@@ -19,7 +19,7 @@ import { GalleryIcon } from "@assets/Gallery Icon";
 import { CameraIcon } from "@assets/Camera Icon";
 import { PinLogo } from "@assets/PinLogo";
 import { useNavigation } from "@react-navigation/native";
-import NavTypes from "@config/NavTypes";
+import { NavTypes } from "@config/NavTypes";
 
 const SignupProcess = () => {
   const [processNum, setProcessNum] = useState<number>(0);

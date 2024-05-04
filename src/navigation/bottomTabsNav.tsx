@@ -2,10 +2,15 @@ import * as React from "react";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import NavTypes from "@config/NavTypes";
+import { NavTypes } from "@config/NavTypes";
 
 import Home from "../screens/Home";
-const Stack = createNativeStackNavigator();
+
+export type BottomStackParams = {
+  HOME: undefined;
+};
+
+const Stack = createNativeStackNavigator<BottomStackParams>();
 const BottomTabsNav = () => {
   return (
     <Stack.Navigator>

@@ -17,8 +17,7 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"],
-      "@config/*": ["src/config/*"],
-      
+      "@config/*": ["src/config/*"]
     }
   },
   "extends": "@tsconfig/react-native/tsconfig.json",

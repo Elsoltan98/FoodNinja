@@ -1,26 +1,20 @@
 import { StyleSheet, SafeAreaView } from "react-native";
-import React, { useEffect } from "react";
+import React from "react";
 import Colors from "./src/config/colors";
-import SplashScreen from "react-native-splash-screen";
+//import SplashScreen from "react-native-splash-screen";
 import AppNav from "./src/navigation";
 import { ThemeProvider } from "./src/utils/ThemeContext";
+import { Provider } from "react-redux";
+import store from "./src/redux/store";
 
 const App = () => {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (SplashScreen) {
-        SplashScreen.hide();
-      }
-    }, 2000);
-
-    // Clear the timer on component unmount
-    return () => clearTimeout(timer);
-  }, []);
   return (
     <SafeAreaView style={styles.container}>
-      <ThemeProvider>
-        <AppNav />
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider>
+          <AppNav />
+        </ThemeProvider>
+      </Provider>
     </SafeAreaView>
   );
 };

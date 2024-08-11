@@ -1,9 +1,9 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Intro from "../screens/intro";
+//import Intro from "../screens/intro";
 import { NavTypes } from "@config/NavTypes";
-import AuthNav from "./authNav";
+//import AuthNav from "./authNav";
 import BottomTabsNav from "./bottomTabsNav";
 import useColors from "../hooks/useColors";
 import { useColorScheme } from "react-native";
@@ -27,7 +27,7 @@ const AppNav = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+        {/* <Stack.Screen
           name={NavTypes.INTRO}
           component={Intro}
           options={{
@@ -40,7 +40,7 @@ const AppNav = () => {
           options={{
             headerShown: false,
           }}
-        />
+        /> */}
         <Stack.Screen
           name={NavTypes.BOTTOM_TAB_NAV}
           component={BottomTabsNav}

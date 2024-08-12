@@ -10,6 +10,7 @@ import Layout from "@components/Layout";
 import CustomInput from "@components/CustomInput";
 import { SearchInput } from "@assets/SearchInput";
 import { FilterIcon } from "@assets/Filter";
+import SpecialCard from "@components/Special";
 
 const Home = () => {
   return (
@@ -35,12 +36,13 @@ const Home = () => {
         <View
           style={[
             styles.iconContainer,
-            { backgroundColor: Colors.light.lightOrange },
+            { backgroundColor: Colors.light.lightOrange, marginLeft: -10 },
           ]}
         >
           <SvgXml xml={FilterIcon} width={25} height={25} />
         </View>
       </View>
+      <SpecialCard />
     </Layout>
   );
 };
@@ -70,7 +72,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     backgroundColor: Colors.light.lightOrange,
     marginBottom: 0,
-    width: "95%",
+    width: "90%",
   },
 });
 

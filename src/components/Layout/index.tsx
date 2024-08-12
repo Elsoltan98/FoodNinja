@@ -28,6 +28,6 @@ const styles = StyleSheet.create({
   opactiyContainer: {
     flex: 1,
     backgroundColor: "rgba(255,255,255,0.6)",
-    paddingHorizontal: scale(15),
+    paddingHorizontal: scale(22),
   },
 });

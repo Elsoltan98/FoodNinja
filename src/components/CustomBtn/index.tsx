@@ -17,6 +17,7 @@ interface CustomBtnProps {
   style?: ViewStyle | ViewStyle[];
   colors?: string[];
   textColor?: string;
+  gridStyle?: ViewStyle;
 }
 
 const CustomBtn: FC<CustomBtnProps> = ({
@@ -26,6 +27,7 @@ const CustomBtn: FC<CustomBtnProps> = ({
   style,
   colors,
   textColor,
+  gridStyle,
 }) => {
   return (
     <TouchableOpacity
@@ -33,7 +35,7 @@ const CustomBtn: FC<CustomBtnProps> = ({
       onPress={onPress}
     >
       <LinearGradient
-        style={[icon ? styles.iconContainer : styles.linearGradient]}
+        style={[icon ? styles.iconContainer : styles.linearGradient, gridStyle]}
         colors={
           colors
             ? colors

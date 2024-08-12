@@ -4,6 +4,7 @@ import {
   StyleSheet,
   NativeSyntheticEvent,
   TextInputFocusEventData,
+  ViewStyle,
 } from "react-native";
 import React, { FC, ReactElement } from "react";
 import { fontScale, sHeight, sWidth, scale, vScale } from "@config/scale";
@@ -25,6 +26,7 @@ interface CustomInputProps {
   show?: boolean;
   errors?: string;
   touched?: boolean;
+  style?: ViewStyle;
 }
 
 const CustomInput: FC<CustomInputProps> = ({
@@ -39,6 +41,7 @@ const CustomInput: FC<CustomInputProps> = ({
   show,
   errors,
   touched,
+  style,
 }) => {
   const { AppColors } = useColors();
   return (
@@ -49,6 +52,7 @@ const CustomInput: FC<CustomInputProps> = ({
             styles.inputContainer,
             styles.iconsContainer,
             leftIcon && styles.withLeftContainer,
+            style,
           ]}
         >
           <View style={styles.leftContainer}>

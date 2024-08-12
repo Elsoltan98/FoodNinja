@@ -3,10 +3,13 @@ import React from "react";
 
 import { NotifiIcon } from "@assets/NotifiIcon";
 import { SvgXml } from "react-native-svg";
-import { fontScale, scale } from "@config/scale";
+import { fontScale, scale, vScale } from "@config/scale";
 import Colors from "@config/colors";
 import AppText from "@components/AppText";
 import Layout from "@components/Layout";
+import CustomInput from "@components/CustomInput";
+import { SearchInput } from "@assets/SearchInput";
+import { FilterIcon } from "@assets/Filter";
 
 const Home = () => {
   return (
@@ -20,6 +23,22 @@ const Home = () => {
         />
         <View style={styles.iconContainer}>
           <SvgXml xml={NotifiIcon} width={25} height={25} />
+        </View>
+      </View>
+      <View style={styles.searchContainer}>
+        <CustomInput
+          leftIcon={<SvgXml xml={SearchInput} width={15} height={15} />}
+          inputPlaceHolder="What do you want to order?"
+          style={styles.inputContainer}
+          withIcons
+        />
+        <View
+          style={[
+            styles.iconContainer,
+            { backgroundColor: Colors.light.lightOrange },
+          ]}
+        >
+          <SvgXml xml={FilterIcon} width={25} height={25} />
         </View>
       </View>
     </Layout>
@@ -42,6 +61,16 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 1, height: 3 },
     shadowOpacity: 0.3,
     shadowRadius: 15,
+  },
+  searchContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: vScale(30),
+  },
+  inputContainer: {
+    backgroundColor: Colors.light.lightOrange,
+    marginBottom: 0,
+    width: "95%",
   },
 });
 
